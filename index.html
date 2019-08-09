@@ -464,34 +464,75 @@
 		</div>
 	</div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="assets/js/mouswheel.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			var id = null;
+			var day = 86400 //One day in timestamp (unix)
+			var week = day * 7 // One week in timestamp (unix)
+			var halfweek = week / 2;
+
+			/*---------------------*\
+			| THIS IS A TEMP METHOD,|
+			| WAIT FOR THE API TO   |
+			|      BE FIXED.        |
+			| CALL PAUL DECROSSE FOR|
+			|      EXPLANATIONS     |
+			\*---------------------*/
+
+			function add_data(data) {
+                console.log(data)
+				if (data.meta.total_count == 0) {
+					$('#meetup').hide();
+					$('#no_meetup').show();
+				}
+				$('#meetup_description').html(JSON.stringify(data.data[0].description));
+				$('#meetup_name').html(JSON.stringify(data.data[0].name).replace(/\"/g, ""));
+				ddate = JSON.stringify(data.data[0].time);
+				var stripped = Math.floor(ddate / 1e0);
+				var myDate = new Date(stripped);
+				id = data.data[0].created / (1e3);
+				$('#meetup_date').html(myDate.toLocaleString());
+				$('#meetup_local').html(JSON.stringify(data.data[0].venue.name).replace(/\"/g, ""));
+				$('#meetup_link').attr('href', JSON.stringify(data.data[0].link).replace(/\"/g, ""));
+			}
+
+			function add_photo(photo) {
+                console.log(photo);
+				for (var i = photo.length - 1; i >= 0; i--) {
+					if (photo[i].created / 1e3 >= id - halfweek && photo[i].created / 1e3 <= id + halfweek) {
+                        lpic = JSON.stringify(photo[i].photo_link).replace(/\"/g, "");
+                        hpic = lpic.replace("global", "600");
+                        $('#meetup_photo').attr('src', hpic);
+					}
+				}
+			}
+
 			$.ajax({
 				type:"GET", // GET = requesting data
-				url:"https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=GDG-Strasbourg&photo-host=public&page=1&fields=&order=time&desc=false&status=upcoming&sig_id=248873796&sig=8f57c7625d066e4a9ce3d4cfa58e9cf5990ddb07",
+				url:"https://api.meetup.com/GDG-Strasbourg/events?&sign=true&photo-host=public&page=20",
 				success: function(data) {
-					if (data.meta.total_count == 0) {
-						$('#meetup').hide();
-						$('#no_meetup').show();
-					}
-					$('#meetup_description').html(JSON.stringify(data.results[0].description));
-					$('#meetup_name').html(JSON.stringify(data.results[0].name).replace(/\"/g, ""));
-					ddate = JSON.stringify(data.results[0].time);
-					var stripped = Math.floor(ddate / 1e0);
-					var myDate = new Date(stripped);
-					$('#meetup_date').html(myDate.toLocaleString());
-					$('#meetup_local').html(JSON.stringify(data.results[0].venue.name).replace(/\"/g, ""));
-					lpic = JSON.stringify(data.results[0].photo_url).replace(/\"/g, "");
-					hpic = lpic.replace("global", "600");
-					$('#meetup_photo').attr('src', hpic);
-					$('#meetup_link').attr('href', JSON.stringify(data.results[0].event_url).replace(/\"/g, ""));
+					add_data(data);
+                    console.log("yo");
+					successCallBack();
 				},
 				// error: function()
 				dataType: 'jsonp',
 			});
+
+			function successCallBack() {
+				$.ajax({
+					type:"GET",
+					url:"https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
+					success: function(photo) {
+                        console.log("success");
+						add_photo(photo);
+					},
+				})
+			}
+
 			$('.parallax').parallax();
 			$('.sidenav').sidenav();
 			$('.modal').modal();
