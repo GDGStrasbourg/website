@@ -522,7 +522,7 @@
 			function successCallBack() {
 				$.ajax({
 					type:"GET",
-					url:"http://consumerhost.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
+					url:"https://cors-anywhere.herokuapp.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
 					success: function(photo) {
 						add_photo(photo);
 					},
