@@ -483,7 +483,6 @@
 			\*---------------------*/
 
 			function add_data(data) {
-                console.log(data)
 				if (data.meta.total_count == 0) {
 					$('#meetup').hide();
 					$('#no_meetup').show();
@@ -500,7 +499,6 @@
 			}
 
 			function add_photo(photo) {
-                console.log(photo);
 				for (var i = photo.length - 1; i >= 0; i--) {
 					if (photo[i].created / 1e3 >= id - halfweek && photo[i].created / 1e3 <= id + halfweek) {
                         lpic = JSON.stringify(photo[i].photo_link).replace(/\"/g, "");
@@ -515,7 +513,6 @@
 				url:"https://api.meetup.com/GDG-Strasbourg/events?&sign=true&photo-host=public&page=20",
 				success: function(data) {
 					add_data(data);
-                    console.log("yo");
 					successCallBack();
 				},
 				// error: function()
@@ -525,9 +522,8 @@
 			function successCallBack() {
 				$.ajax({
 					type:"GET",
-					url:"https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
+					url:"http://consumerhost.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
 					success: function(photo) {
-                        console.log("success");
 						add_photo(photo);
 					},
 				})
