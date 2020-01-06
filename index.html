@@ -1,5 +1,14 @@
 ﻿<html>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141199107-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-141199107-3');
+		</script>
 		<title>GDG Strasbourg</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="description" content="Le GDG Strasbourg est un groupe d'échange et de partage autour du développement logiciel à Strasbourg" />
@@ -118,6 +127,11 @@
 					left:20% !important;
 				}
 			}
+			.googling-text {
+				background: linear-gradient(to right, #EA4335 25%, #4285F4 50%, #FBBC05 75%, #34A853 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
 		</style>
 	</head>
 	<body>
@@ -127,21 +141,22 @@
 				<div class="nav-wrapper container">
 					<a href="#" class="brand-logo" style="margin-top: 6px;"><img class="logo" height="50px;" src="src/logo.png"></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#">Accueil</a></li>
+						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#top">Accueil</a></li>
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#prog">Equipe</a></li>
-						<li class="blue"><a style="font-weight: bold;" class="black-text" href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank">Rejoignez-nous</a></li>
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#acces">Partenaires</a></li>
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#contact">Contact</a></li>
+						<li><a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" style="border-radius: 100px;" class="btn blue waves-effect" href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank">Rejoignez-nous</a></li>
+						<li><a href="https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ" target="_blank" style="border-radius: 100px;" class="btn green waves-effect">CFP</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
 	</header>
-	<div class="container">
-		<h2 class="black-text" style="font-family: 'Product Sans';">Prochain meetup :</h2>
+	<div class="container" id="top">
+		<h2 style="font-family: 'Product Sans';">Prochain meetup :</h2>
 		<div style="display: none;" id="no_meetup" class="center-align">
 			<img src="src/no_event.png" width="300">
-			<br><span class="black-text">Aucun meetup prévu pour le moment (mais "stay tuned") </span>
+			<br><span class="black-text">Aucun meetup prévu pour le moment, stay tuned</span><br><br>
 		</div>
 		<div id="meetup" class="z-depth-1" style="border-radius: 10px 10px 10px 10px;">
 			<div class="row">
@@ -160,7 +175,7 @@
 			</div>
 		</div>
 		<center>
-			<a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" class="btn blue waves-effect">Voir tous les meetups</a> &nbsp;<a href="https://www.youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q" target="_blank" class="btn red waves-effect"><i class="material-icons left">ondemand_video</i>reVoir un meetup</a>
+			<a style="border-radius: 100px;" href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" class="btn blue waves-effect">Voir tous les meetups</a> &nbsp;<a style="border-radius: 100px;" href="https://www.youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q" target="_blank" class="btn red waves-effect"><i class="material-icons left">ondemand_video</i>reVoir un meetup</a>
 			<!-- <br>
 			<br>
 			<a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" class="btn-large blue waves-effect">Proposer un talk</a> -->
@@ -170,7 +185,7 @@
 			<a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" style="width: 100%;" class="waves-effect blue waves-light btn-large">Rejoignez-nous !</a>
 			<br><br>
 		</div>
-		<h2 class="black-text" style="font-family: 'Product Sans';">Main events :</h2>
+		<h2 class="black-text" style="font-family: 'Product Sans';">Nos événements :</h2>
 		<div class="row d-flex">
 			<div class="col s12 m6 d-flex">
 				<div class="card" style="border-radius: 10px;">
@@ -205,7 +220,7 @@
 		</div>
 
 		<!-- Team -->
-		<h3 class="valign-wrapper" id="prog" style="color: grey;"><i style="font-size: 0.8em; color: grey; margin-top: 2px;" class="material-icons">people_outline</i>&emsp;L'équipe</h3>
+		<h3 class="valign-wrapper" id="prog" style="color: grey;"><i style="font-size: 0.8em; color: grey; margin-top: 2px;" class="material-icons googling-text">people_outline</i>&emsp;L'équipe</h3>
 	</div>
 	<div class="scrolling-wrapper">
 		<a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/colin-cleary-16022b159/">
@@ -219,7 +234,7 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/14.jpg">
@@ -230,7 +245,7 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/1.jpg">
@@ -241,40 +256,29 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/2.jpg">
-	              <span class="card-title">Arthur</span>
+	              <img style="width: 300px;" src="src/team/17.jpg">
+	              <span class="card-title">Paul</span>
 	            </div>
 	            <div class="card-content">
 	              <p>Directeur Technique</p>
 	            </div>
             </div>
         </a>
-         <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/12.jpg">
-	              <span class="card-title">Laetitia</span>
+	              <img style="width: 300px;" src="src/team/19.jpg">
+	              <span class="card-title">Solène</span>
 	            </div>
 	            <div class="card-content">
-	              <p>Responsable Relation Partenaires</p>
+	              <p>Responsable Relations Partenaires</p>
 	            </div>
             </div>
         </a>
-        <a target="_blank" style="color:inherit;" href="https://hug33k.github.io/">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
-	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/3.jpg">
-	              <span class="card-title">Hugo</span>
-	            </div>
-	            <div class="card-content">
-	              <p>Designer</p>
-	            </div>
-            </div>
-        </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/6.jpg">
@@ -285,29 +289,40 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/17.jpg">
-	              <span class="card-title">Paul</span>
+	              <img style="width: 300px;" src="src/team/3.jpg">
+	              <span class="card-title">Gilles</span>
 	            </div>
 	            <div class="card-content">
-	              <p>Vice CTO</p>
+	              <p>Designer</p>
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/15.jpg">
-	              <span class="card-title">Simon</span>
+	              <img style="width: 300px;" src="src/team/18.jpg">
+	              <span class="card-title">Zoélie</span>
 	            </div>
 	            <div class="card-content">
-	              <p>Community Manager</p>
+	              <p>Coresponsable communication</p>
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
+			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+	            <div class="card-image" style="height: 200px;">
+	              <img style="width: 300px;" src="src/team/20.jpg">
+	              <span class="card-title">Soizic</span>
+	            </div>
+	            <div class="card-content">
+	              <p>Coresponsable communication</p>
+	            </div>
+            </div>
+        </a>
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/16.jpg">
@@ -318,7 +333,7 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/4.jpg">
@@ -329,18 +344,7 @@
 	            </div>
             </div>
         </a>
-        <a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/ibrahim-akg%C3%BCl-457995178/">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
-	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/13.jpg">
-	              <span class="card-title">Ibrahim</span>
-	            </div>
-	            <div class="card-content">
-	              <p>Pôle IO</p>
-	            </div>
-            </div>
-        </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img style="width: 300px;" src="src/team/8.jpg">
@@ -351,14 +355,14 @@
 	            </div>
             </div>
         </a>
-        <a style="color:inherit;" href="#">
+        <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img style="width: 300px;" src="src/team/10.jpg">
-	              <span class="card-title">Marius</span>
+	              <img style="width: 300px;" src="src/team/12.jpg">
+	              <span class="card-title">Laetitia</span>
 	            </div>
 	            <div class="card-content">
-	              <p>Pôle Meetup</p>
+	              <p>Coresponsable Relations Partenaires</p>
 	            </div>
             </div>
         </a>
@@ -366,18 +370,18 @@
 	<div class="container">
 		<!-- Partners -->
 		<br><br>
-		<h3 id="acces" class="valign-wrapper" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons">star_border</i>&emsp;Nos partenaires</h3>
+		<h3 id="acces" class="valign-wrapper" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">star_border</i>&emsp;Nos partenaires</h3>
 		<div class="row">
 			<div class="col s12 l6 center-align">
 				<a href="https://epitech.eu" target="_blank"><img src="src/partners/epitech.png" width="200"></a>
 			</div>
 			<div class="col s12 l6 center-align">
-				<a href="#partners" class="btn-large btn-flat blue white-text waves-effect waves-light valign-wrapper modal-trigger"><i class="material-icons left">arrow_forward</i>Devenir Partenaire</a>
+				<a href="#partners" style="border-radius: 100px;" class="btn-large btn-flat blue white-text waves-effect waves-light valign-wrapper modal-trigger"><i class="material-icons left">arrow_forward</i>Devenir Partenaire</a>
 			</div>
 		</div>
 
 		<!-- Contact -->
-		<h3 class="valign-wrapper" id="contact" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons">mail_outline</i>&emsp;Nous contacter</h3>
+		<h3 class="valign-wrapper" id="contact" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">mail_outline</i>&emsp;Nous contacter</h3>
 		<div class="row">
 			<div class="col s12 m6">
 				<div class="card white horizontal" style="border-radius: 10px;">
@@ -425,6 +429,8 @@
 				<div class="col l4 offset-l2 s12">
 					<h5 class="white-text">Ressources</h5>
 					<ul>
+						<li></li>
+						<li><a class="grey-text text-lighten-3 modal-trigger" href="#coc">Code Of Conduct</a></li>
 						<li><a class="grey-text text-lighten-3" href="https://developers.google.com/programs/community/gdg/">Le Programme GDG</a></li>
 						<li><a class="grey-text text-lighten-3" href="https://www.meetup.com/fr-FR/GDG-Strasbourg">Meetup</a></li>
 					</ul>
@@ -432,8 +438,8 @@
 			</div>
 		</div>
 		<div class="footer-copyright">
-			<div class="container">
-				GDG Strasbourg
+			<div class="container valign-wrapper">
+				<i class="material-icons tooltipped" data-position="right" data-tooltip="#Jungle" data-margin="0">nature</i> · GDG Strasbourg
 			</div>
 		</div>
 	</footer>
@@ -450,6 +456,29 @@
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class="modal-close waves-effect btn-flat">Fermer</a>
+		</div>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="coc" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>Code Of Conduct</h4>
+			<p>Le DevFest Strasbourg se veut être une expérience sans harcèlement, quel que soit votre sexe, votre identité sexuelle, votre âge, votre orientation sexuelle, votre handicap, votre apparence physique, votre poids ou votre religion.</p>
+			<p>Nous ne tolérons aucun harcèlement de la part des participants, quel que soit sa forme. Les expressions et les images à connotation sexuelle ne sont pas appropriées lors de la durée de l'événement. Ceci inclut les conférences, les ateliers, les soirées, Twitter et les autres médias en ligne. Les participants au DevFest qui violent ces règles peuvent se voir sanctionnés, voir exclu du festival.</p>
+			<ul class="actuallist">Le harcèlement peut comprendre:
+				<li>Les commentaires liés à la domination sociale, liés au genre, à l’identité et à l’expression de genre, à l’orientation sexuelle, au handicap, à l’apparence physique, à la taille, à l’origine, à l’âge, à la religion, aux choix technologiques</li>
+				<li>Les images sexuelles dans les espaces publiques</li>
+				<li>L’intimidation volontaire envers une personne</li>
+				<li>La photographie forcée</li>
+				<li>La perturbation prolongée d’une conférence</li>
+				<li>Un contact physique jugé inapproprié</li>
+				<li>L’encouragement à l’un des comportements cités ci-dessus Les participants qui se font avertir d’arrêter un comportement de harcèlement par un membre du personnel ou par un autre participant doivent s’y conformer immédiatement.</li>
+			</ul>
+			<p>Nous nous réservons le droit de prendre toutes les mesures nécéssaires pour faire cesser tout comportement de harcèlement. Cela va du simple avertissement à l’expulsion définitive de l'événement, sans possibilité de remboursement.</p>
+			<p>Nous attendons de la part des participants à nos évènements et des membres de notre association un respect de ces règles sur les lieux de l’évènements, sur les réseaux sociaux et également au quotidien.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Fermer</a>
 		</div>
 	</div>
 
@@ -521,6 +550,7 @@
 			$('.parallax').parallax();
 			$('.sidenav').sidenav();
 			$('.modal').modal();
+			$('.tooltipped').tooltip();
 			$('.materialboxed').materialbox();
 			$('.js-scrollTo').on('click', function() { // Au clic sur un élément
 				var page = $(this).attr('href'); // Page cible
