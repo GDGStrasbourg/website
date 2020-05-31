@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="favicon.png">
+
+  <title>Android 11 Beta Launch Show</title>
+  <style type="text/css">
+  	.android-bg-color {
+  		background-color: #073042;
+  	}
+  	.android-bg2-color {
+  		background-color: #093f57;
+  	}
+  	.android-accent-color {
+  		background-color: #3ddc83;
+  	}
+  	.android-orange-color {
+  		color: #3ddc83;
+  		font-weight: bold !important;
+  	}
+  	.logo-position {
+  		position: absolute;
+  		top: 15px;
+  		left: 15px;
+  	}
+  	.theming {
+  		border-radius: 10px !important;
+  	}
+  	.theming-button {
+  		border-radius: 40px !important;
+  	}
+	.flex {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	@media only screen and (max-width: 990px) {
+		.logo-position {
+  		top: 8px;
+  		left: -100px;
+  	}
+	}
+  </style>
+  <meta description="Gamu, l'agence de l'innovation. Votre site web ou vos projets plus complexes sur mesure. Nous construisons votre plateforme innovante sur mesure et selon votre budget !">
+</head>
+<body class="android-bg-color" style="font-family: 'Roboto', sans-serif; font-weight:400;">
+	<div style="background: url(src/android/bg.png) no-repeat center fixed; background-size: cover; height: 100vh; width: 100%; background-color: #073042;">
+		<div class="navbar-fixed">
+			<nav class="navinavi transparent z-depth-0">
+				<div class="nav-wrapper">
+					<a href="#!" class="brand-logo set-position"><img class="logo-position" alt="logo" height="40px" src="src/android/logo.png"></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#agenda" class="js-scrollTo white-text btn-flat android-accent-color theming-button">Voir le programme</a></li>
+						<li><a href="https://gdgstrasbourg.fr" target="_blank" class="white-text btn-flat android-accent-color theming-button">Qui sommes-nous ?</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<iframe style="height: 100%; width: 100%;" src="https://www.youtube.com/embed/gqJEcy57hA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+
+	<div id="anchor" style="position: absolute; bottom: 0px;"></div>
+	<div id="agenda" class="android-bg-color z-depth-2">
+		<div class="container white-text">
+			<br><br>
+			<h1 class="android-orange-color">Programme du launch show</h1>
+			<div class="row flex">
+				<div class="col s12 l4 flex">
+					<div class="card theming android-bg2-color">
+						<div class="card-content white-text">
+							<span class="card-title android-orange-color">16h45 : Le Before</span>
+							<br>
+							<p style="font-size: 1.2em;">Quelles sont les nouveautés attendues d’Android 11 ?<br><br>Quelles sont les rumeurs ?</p>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l4 flex">
+					<div class="card theming android-bg2-color">
+						<div class="card-content white-text">
+							<span class="card-title android-orange-color">17h00 : Le Live</span>
+							<br>
+							<p style="font-size: 1.2em;">Retransmission en direct du Android 11 Beta Launch Show</p>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l4">
+					<div class="card theming android-bg2-color">
+						<div class="card-content white-text">
+							<span class="card-title android-orange-color">L'After</span>
+							<br>
+							<p style="font-size: 1.2em;">Débrief des nouveautés<br><br>Partagez votre avis et venez débattre<br>&nbsp;</p>
+						</div>
+					</div>
+				</div>
+				<center>Psst, c'est que le début. Découvrez ce qui vous attend ce mois-ci</center>
+			</div>
+		</div>
+	</div>
+
+	<div id="meetup_home" style="background: url(src/android/bg.png) no-repeat center fixed; background-size: cover; height: 100vh; width: 100%; background-color: #073042;">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m6 l7 x14">
+					<div class="white-text">
+						<h1 class="hide-on-small-only"><br><br></h1>
+						<br>
+						<h1><b>Android 11 Meetup Strasbourg </b></h1>
+						<br>
+						<h5>30 Juin · 18h30</h5>
+						<br>
+						<h3>Découvrez tous les secrets d'Android 11 avec des experts</h3>
+						<br>
+						<a href="https://www.billetweb.fr/android-11-meetup" class="white-text btn-large android-accent-color theming-button">Inscription*</a>
+						<br>* C'est gratuit et on vous réserve une petite surprise
+					</div>
+				</div>
+				<div class="col s12 m6 l5 xl4">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.parallax').parallax();
+			$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+				var page = $(this).attr('href'); // Page cible
+				var speed = 750; // Durée de l'animation (en ms)
+				$('html, body').animate( { scrollTop: $(page).offset().top - 50 }, speed ); // Go
+				return false;
+			});
+		});
+		$(function() {
+			var header = $(".navinavi");
+			$(window).scroll(function() {
+				var scroll = $(window).scrollTop();
+				if (scroll >= 10) {
+					header.removeClass('transparent z-depth-0 trans').addClass("android-bg-color z-depth-2 trans");
+				} else {
+					header.removeClass("android-bg-color z-depth-2 trans").addClass('transparent z-depth-0 trans');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

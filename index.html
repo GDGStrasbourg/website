@@ -24,7 +24,10 @@
 			body {
 				font-family: 'Roboto', sans-serif;
 			}
-			 .scrolling-wrapper {
+			.android-bg2-color {
+				background-color: #093f57;
+			}
+			.scrolling-wrapper {
 				overflow-x: scroll;
 				overflow-y: hidden;
 				white-space: nowrap;
@@ -132,6 +135,23 @@
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
+			.theming {
+				border-radius: 10px !important;
+			}
+			.theming-button {
+				border-radius: 40px !important;
+			}
+			.flex {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.android-orange-color {
+				color: #3ddc83;
+				font-weight: bold !important;
+			}
+			.android-accent-color {
+				background-color: #3ddc83;
+			}
 		</style>
 	</head>
 	<body>
@@ -157,7 +177,7 @@
 		<div class="col s12 m7">
 			<div class="card horizontal z-depth-0 red lighten-4" style="border-radius: 10px 10px 10px 10px;">
 				<div class="card-content">
-					<p class="valign-wrapper"><i class="material-icons">warning</i>&emsp; <b> En raison de l'épidemie de coronavirus, tous nos événements sont exclusivements en ligne jusqu'à nouvel ordre.</b></p>
+					<p class="valign-wrapper"><i class="material-icons">warning</i>&emsp; <b> En raison de l'épidemie de coronavirus, tous nos événements sont exclusivement en ligne jusqu'à nouvel ordre.</b></p>
 				</div>
 			</div>
 		</div>
@@ -195,159 +215,43 @@
 		</div>
 	</div>
 	<br>
-	<div class="blue-grey darken-4" style="min-height: 96vh;">
+	<div class="parallax-container">
+		<div class="parallax"><img src="src/android/bg.png"></div>
 		<div class="container">
-			<br>
-			<center><h2 class="white-text" style="font-family: 'Product Sans';">Community Speedrun</h2>
-				<h5 class="white-text" style="font-family: 'Product Sans';">4-31 Mai</h5>
-				<h5 class="white-text">Tentez de remporter jusqu'à 50$ de réduction sur le Google Online Store</h5>
-			</center>
-			<div class="row d-flex">
-				<div class="col s12 m3 d-flex">
-					<div class="card z-depth-5" style="border-radius: 10px;">
-						<div style="border-radius: 10px 10px 0px 0px; background-image: linear-gradient(to right, #8000ff, #ff00a8); height: 50px; padding-top: 15px; color: white;">
-							<center><b>Speedrun #1</b></center>
-						</div>
-						<div class="card-content" style="text-align: justify;">
-							<h5>Data, ML, AI</h5>
-							<h6>4-10 Mai</h6>
-							<p>Labs: AI Platform: Qwik Start, Dataprep: Qwik Start, Dataflow Qwik Start - Templates, Classify Images of Clouds in the Cloud with AutoML Vision</p>
-						</div>
-						<div class="card-action">
-							<br><br><br>
-							<p>
-								<b>4 Mai · 19h</b>
-								<br>
-								<b>Webinar : </b>Classify Images of Clouds in the Cloud with AutoML Vision
-							</p>
-							<br>
-							<div class="row valign-wrapper">
-								<div class="col s2">
-									<img src="http://lh3.googleusercontent.com/QUzgNp-ZRVlY_an8BgM3mScuFBKP_rfrrrvwDEOYkBLqPOXdkK4aDALSj6kePSknANZMGIdi8fj3DugcW7g5" alt="" class="circle" style="object-fit: cover; height: 35px; width: 35px;" />
-								</div>
-								<div class="col s10">
-									<span class="black-text">
-									<p>
-										<b>Zack Akil</b>
-										<br>
-										Machine Learning Developer Advocate at Google
-									</p>
-									</span>
-								</div>
-							</div>
-							<center><a style="border-radius: 100px;" href="http://speedrun.gdgstrasbourg.fr" class="btn-flat blue waves-effect waves-light amber white-text" href="#">Inscription</a></center>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col s12 l6">
+					<h2 style="font-family: 'Product Sans'; color: #3ddc83;">Android 11 Meetup Series</h2>
+					<h5 class="white-text" style="font-family: 'Product Sans';">A l'occasion de la sortie d'Android 11, le GDG Strasbourg vous propose une série d'événements pour découvrir la nouvelle version d'Android sous toute ses coutures avec des spécialistes et des passionnés.</h5>
+					<br>
+					<a href="http://android11.gdgstrasbourg.fr" class="btn-large android-accent-color theming-button">Découvrir tout le programme</a>
 				</div>
-				<div class="col s12 m3 d-flex">
-					<div class="card z-depth-5" style="border-radius: 10px;">
-						<div style="border-radius: 10px 10px 0px 0px; background-image: linear-gradient(to right, #ff00a8, #ff0055); height: 50px; padding-top: 15px; color: white;">
-							<center><b>Speedrun #2</b></center>
-						</div>
-						<div class="card-content" style="text-align: justify;">
-							<h5>Language Processing</h5>
-							<h6>11-17 Mai</h6>
-							<p>Labs: Google Cloud Speech API: Qwik Start, Cloud Natural Language API: Qwik Start, Entity and Sentiment Analysis with the Natural Language API, Speech to Text Transcription with the Cloud Speech API</p>
-						</div>
-						<div class="card-action">
-							<br><br>
-							<p>
-								<b>11 Mai · 19h</b>
-								<br>
-								<b>Webinar : </b>Entity and Sentiment Analysis with the Natural Language API
-							</p>
-							<div class="row valign-wrapper">
-								<div class="col s2">
-									<img src="http://lh3.googleusercontent.com/U7zAFChmOe-L-6YRPTKKQ7OL30VQItsO5uB0DKS_zTpTiewkM0FuVvuky691vubjB6Kgfq48byGvPdb0LfNs" alt="" class="circle" style="object-fit: cover; height: 35px; width: 35px;" />
-								</div>
-								<div class="col s10">
-									<span class="black-text">
-									<p>
-										<b>Dale Markowitz</b>
-										<br>
-										Applied AI Engineer and Developer Advocate at Google
-									</p>
-									</span>
-								</div>
-							</div>
-							<center><a style="border-radius: 100px;" href="http://speedrun.gdgstrasbourg.fr" class="btn-flat blue waves-effect waves-light amber white-text" href="#">Inscription</a></center>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 m3 d-flex">
-					<div class="card z-depth-5" style="border-radius: 10px;">
-						<div style="border-radius: 10px 10px 0px 0px; background-image: linear-gradient(to right, #ff0055, #ff8b00); height: 50px; padding-top: 15px; color: white;">
-							<center><b>Speedrun #3</b></center>
-						</div>
-						<div class="card-content" style="text-align: justify;">
-							<h5>Intermediate ML</h5>
-							<h6>18-24 Mai</h6>
-							<p>Labs: Implementing an AI Chatbot with Dialogflow, Google Assistant: Build an Application with Dialogflow and Cloud Functions, Classify Text into Categories with the Natural Language API, Awwvision: Cloud Vision API from a Kubernetes Cluster </p>
-						</div>
-						<div class="card-action">
-							<br>
-							<p>
-								<b>18 Mai · 19h</b>
-								<br>
-								<b>Webinar : </b>Google Assistant: Build an Application with Dialogflow and Cloud Functions
-							</p>
-							<div class="row valign-wrapper">
-								<div class="col s2">
-									<img src="http://lh3.googleusercontent.com/_dDYzjcCLgYUdnAlC1elbAFhPVJHHwDSz3Bgph0UnoAFrkRbIjpeewTCb3o5_eK-FTJwvk0pmPiAluqNkE8UjQ" alt="" class="circle" style="object-fit: cover; height: 35px; width: 35px;" />
-								</div>
-								<div class="col s10">
-									<span class="black-text">
-									<p>
-										<b>Lee Boonstra</b>
-										<br>
-										Applied AI Engineer and Developer Advocate at Google
-									</p>
-									</span>
-								</div>
-							</div>
-							<center><a style="border-radius: 100px;" href="http://speedrun.gdgstrasbourg.fr" class="btn-flat blue waves-effect waves-light amber white-text" href="#">Inscription</a></center>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 m3 d-flex">
-					<div class="card z-depth-5" style="border-radius: 10px;">
-						<div style="border-radius: 10px 10px 0px 0px; background-image: linear-gradient(to right, #ff8b00, #ebd112); height: 50px; padding-top: 15px; color: white;">
-							<center><b>Speedrun #4</b></center>
-						</div>
-						<div class="card-content" style="text-align: justify;">
-							<h5>BigQuery for Machine Learning</h5>
-							<h6>25-31 Mai</h6>
-							<p>Labs: Getting Started with BQML, Predict Taxi Fare with a BigQuery ML Forecasting Model, Predict Visitor Purchases with a Classification Model in BQML, Implement a Helpdesk Chatbot with Dialogflow & BigQuery ML</p>
-						</div>
-						<div class="card-action">
-							<p>
-								<b>25 Mai · 19h</b>
-								<br>
-								<b>Webinar : A Venir</b>
-							</p>
-							<br><br>
-							<div class="row valign-wrapper">
-								<div class="col s2">
-									<img src="http://lh3.googleusercontent.com/AOjxm-tTqjFlSMWQG7pORzFGPdDgcU5uzzyWMHR-qnQgOH4PILbv3UAAZmDyAkvF0nhYjlvlYqUBMGt3L3ciCfI" alt="" class="circle" style="object-fit: cover; height: 35px; width: 35px;" />
-								</div>
-								<div class="col s10">
-									<span class="black-text">
-									<p>
-										<b>Felipe Hoffa</b>
-										<br>
-										Cloud Developer Advocate at Google
-									</p>
-									</span>
-								</div>
-							</div>
-							<center><a style="border-radius: 100px;" href="http://speedrun.gdgstrasbourg.fr" class="btn-flat blue waves-effect waves-light amber white-text" href="#">Inscription</a></center>
-						</div>
-					</div>
+				<div class="col s12 l6">
 				</div>
 			</div>
-			<br>
+			<div class="row flex">
+				<div class="col s12 l4 flex">
+					<div class="card theming android-bg2-color">
+						<div class="card-content white-text">
+							<span class="card-title android-orange-color">3 Juin : Beta Launch Show</span>
+							<br>
+							<p style="font-size: 1.2em;">Suivez en direct avec nous la présentation d'Android 11 Beta, tout en restant chez vous.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l4 flex">
+					<div class="card theming android-bg2-color">
+						<div class="card-content white-text">
+							<span class="card-title android-orange-color">30 Juin : Android 11 Night</span>
+							<br>
+							<p style="font-size: 1.2em;">On partage une soirée ensemble pour découvrir avec spécialistes toutes les nouveautés d'Android 11 pour les développeurs.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l4 flex valign-wrapper">
+				</div>
+			</div>
 		</div>
-	</div>
+    </div>
 	<div class="container">
 		<h2 class="black-text truncate" style="font-family: 'Product Sans';">Nos événements</h2>
 		<div class="row d-flex">
