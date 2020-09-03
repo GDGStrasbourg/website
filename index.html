@@ -511,6 +511,8 @@
 			var day = 86400 //One day in timestamp (unix)
 			var week = day * 7 // One week in timestamp (unix)
 			var halfweek = week / 2;
+			var save_newer = -1;
+			var save_date = 0;
 
 			/*---------------------*\
 			| THIS IS A TEMP METHOD,|
@@ -518,6 +520,8 @@
 			|      BE FIXED.        |
 			| CALL PAUL DECROSSE FOR|
 			|      EXPLANATIONS     |
+			|   ADD PHOTO TAKE THE  |
+			|       LAST PHOTOS     |
 			\*---------------------*/
 
 			function add_data(data) {
@@ -538,12 +542,16 @@
 
 			function add_photo(photo) {
 				for (var i = photo.length - 1; i >= 0; i--) {
-					if (photo[i].created / 1e3 >= id - halfweek && photo[i].created / 1e3 <= id + halfweek) {
-                        lpic = JSON.stringify(photo[i].photo_link).replace(/\"/g, "");
-                        hpic = lpic.replace("global", "600");
-                        $('#meetup_photo').attr('src', hpic);
+					if (save_newer == -1) {
+						save_newer = i;
+						save_date = photo[i].created;
+					} else if (photo[i].created > save_date) {
+						save_newer = i;
 					}
 				}
+                lpic = JSON.stringify(photo[save_newer].photo_link).replace(/\"/g, "");
+                hpic = lpic.replace("global", "600");
+                $('#meetup_photo').attr('src', hpic);
 			}
 
 			$.ajax({
@@ -560,7 +568,7 @@
 			function successCallBack() {
 				$.ajax({
 					type:"GET",
-					url:"https://cors-anywhere.herokuapp.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public&page=20",
+					url:"https://cors-anywhere.herokuapp.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public",
 					success: function(photo) {
 						add_photo(photo);
 					},
