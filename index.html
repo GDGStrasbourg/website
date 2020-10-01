@@ -546,7 +546,7 @@
 				var stripped = Math.floor(ddate / 1e0);
 				var myDate = new Date(stripped);
 				id = data.data[0].created / (1e3);
-				$('#meetup_date').html(myDate.toLocaleString());
+				$('#meetup_date').html(myDate.toLocaleString().slice(0, -3));
 				$('#meetup_local').html(JSON.stringify(data.data[0].venue.name).replace(/\"/g, ""));
 				$('#meetup_link').attr('href', JSON.stringify(data.data[0].link).replace(/\"/g, ""));
 			}
