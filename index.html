@@ -132,6 +132,12 @@
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
+			.blue-event {
+				height: 30vh;
+				background: url(blue-header.png) no-repeat center scroll;
+				-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+				background-size: cover; /* version standardisée */
+			}
 		</style>
 	</head>
 	<body>
@@ -152,6 +158,21 @@
 			</nav>
 		</div>
 	</header>
+	<div class="row" style="background-color: #234e9c;">
+		<div class="col s12 l6 white-text valign-wrapper" style="min-height: 30vh; text-align: justify; background-color: #234e9c;">
+			<div class="container">
+				<h2 style="text-align: left; font-family: 'Product Sans';">Le Canapé Bleu</h2>
+				<div style="position: relative; top: 0px;">Emissions spéciales confinement à base de tech pour les dévelopeurs</div>
+				<br>
+				<div class="valign-wrapper"><a style="border-radius: 0px;" href="blue" class="btn-flat indigo accent-4 white-text waves-effect waves-light">Découvrir</a><a href="blue"><img src="blue/logo.png" height="36" /></a></div>
+			</div>
+		</div>
+		<div class="col s12 l6 blue-event hide-on-small-only">
+			<div class="container">
+				
+			</div>
+		</div>
+	</div>
 	<br>
 	<div class="container" id="top">
 		<div class="col s12 m7">
@@ -184,15 +205,15 @@
 		</div>
 		<center>
 			<a style="border-radius: 100px;" href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" class="btn blue waves-effect">Voir tous les meetups</a> &nbsp;<a style="border-radius: 100px;" href="https://www.youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q" target="_blank" class="btn red waves-effect"><i class="material-icons left">ondemand_video</i>reVoir un meetup</a>
-			<!-- <br>
-			<br>
-			<a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" class="btn-large blue waves-effect">Proposer un talk</a> -->
 		</center>
 		<div class="mob_only">
 			<br>
 			<a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" style="width: 100%;" class="waves-effect blue waves-light btn-large">Rejoignez-nous !</a>
 			<br><br>
 		</div>
+	</div>
+
+	<div class="container">
 		<h2 class="black-text truncate" style="font-family: 'Product Sans';">Nos événements</h2>
 		<div class="row d-flex">
 			<div class="col s12 m6 d-flex">
@@ -228,7 +249,7 @@
 		</div>
 
 		<!-- Team -->
-		<h3 class="valign-wrapper" id="prog" style="color: grey;"><i style="font-size: 0.8em; color: grey; margin-top: 2px;" class="material-icons googling-text">people_outline</i>&emsp;L'équipe</h3>
+		<h3 class="valign-wrapper" id="prog" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; color: grey; margin-top: 2px;" class="material-icons googling-text">people_outline</i>&emsp;L'équipe</h3>
 	</div>
 	<div class="scrolling-wrapper">
 		<a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/colin-cleary-16022b159/">
@@ -289,11 +310,22 @@
         <a target="_blank" style="color:inherit;">
 			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
-	              <img alt="photo de profil" style="width: 300px;" src="src/team/19.jpg">
-	              <span class="card-title">Solène</span>
+	              <img alt="photo de profil" style="width: 300px;" src="src/team/20.jpg">
+	              <span class="card-title">Soizic</span>
 	            </div>
 	            <div class="card-content">
-	              <p>Responsable Relations Partenaires</p>
+	              <p>Responsable Communication</p>
+	            </div>
+            </div>
+        </a>
+        <a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/julien-le-bail-49360b1a9/">
+			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+	            <div class="card-image" style="height: 200px;">
+	              <img alt="photo de profil" style="width: 300px;" src="src/team/25.jpg">
+	              <span class="card-title">Julien</span>
+	            </div>
+	            <div class="card-content">
+	              <p>Graphiste</p>
 	            </div>
             </div>
         </a>
@@ -305,28 +337,6 @@
 	            </div>
 	            <div class="card-content">
 	              <p>Relations Partenaires</p>
-	            </div>
-            </div>
-        </a>
-        <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
-	            <div class="card-image" style="height: 200px;">
-	              <img alt="photo de profil" style="width: 300px;" src="src/team/18.jpg">
-	              <span class="card-title">Zoélie</span>
-	            </div>
-	            <div class="card-content">
-	              <p>Coresponsable communication</p>
-	            </div>
-            </div>
-        </a>
-        <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
-	            <div class="card-image" style="height: 200px;">
-	              <img alt="photo de profil" style="width: 300px;" src="src/team/20.jpg">
-	              <span class="card-title">Soizic</span>
-	            </div>
-	            <div class="card-content">
-	              <p>Coresponsable communication</p>
 	            </div>
             </div>
         </a>
@@ -378,7 +388,7 @@
 	<div class="container">
 		<!-- Partners -->
 		<br><br>
-		<h3 id="acces" class="valign-wrapper" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">star_border</i>&emsp;Nos partenaires</h3>
+		<h3 id="acces" class="valign-wrapper" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">star_border</i>&emsp;Nos partenaires</h3>
 		<div class="row">
 			<div class="col s12 l6 center-align">
 				<a href="https://epitech.eu" target="_blank"><img alt="logo epitech" src="src/partners/epitech.png" width="200"></a>
@@ -387,9 +397,9 @@
 				<a href="#partners" style="border-radius: 100px;" class="btn-large btn-flat blue white-text waves-effect waves-light valign-wrapper modal-trigger"><i class="material-icons left">arrow_forward</i>Devenir Partenaire</a>
 			</div>
 		</div>
-
+		<br>
 		<!-- Contact -->
-		<h3 class="valign-wrapper" id="contact" style="color: grey;"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">mail_outline</i>&emsp;Nous contacter</h3>
+		<h3 class="valign-wrapper" id="contact" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">mail_outline</i>&emsp;Nous contacter</h3>
 		<div class="row">
 			<div class="col s12 m6">
 				<div class="card white horizontal" style="border-radius: 10px;">
