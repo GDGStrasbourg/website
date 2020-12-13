@@ -15,146 +15,13 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="modern.css"  media="screen,projection"/>
 		<link rel="icon" href="favicon.png">
-		<style type="text/css">
-			@font-face {
-				font-family: "Product Sans";
-				src: url(assets/font/ProductSans.ttf) format("truetype");
-			}
-			body {
-				font-family: 'Roboto', sans-serif;
-			}
-			 .scrolling-wrapper {
-				overflow-x: scroll;
-				overflow-y: hidden;
-				white-space: nowrap;
-				padding: 0px;
-			}
-			.major {
-				font-weight: bold;
-				font-size: 7em;
-				margin-bottom: 0px;
-			}
-			.major2 {
-				font-weight: bold;
-				font-size: 4em;
-				margin-bottom: 0px;
-				margin-top: -30px;
-			}
-			.major3 {
-				font-weight: bold;
-				font-size: 3.5em;
-				margin-bottom: 0px;
-				margin-top: -10px;
-			}
-			.major4 {
-				font-weight: bold;
-				font-size: 3em;
-				margin-bottom: 0px;
-				margin-top: -5px;
-			}
-			.mob_only {
-				display: none;
-			}
-			.card-image {
-				height: 150px;
-			}
-			@media only screen and (max-width: 992px) {
-				.major {
-					font-size: 5em;
-				}
-				.major2 {
-					font-size: 4em;
-				}
-				.major3 {
-					font-size: 3.5em;
-				}
-				.major4 {
-					font-size: 3em;
-				}
-				.mob_only {
-					display: inline;
-				}
-			}
-			@media only screen and (max-width: 400px) {
-				.logo {
-					position: absolute;
-					right: -175px;
-				}
-			}
-			@media only screen and (max-width: 600px) {
-				.card-image {
-					height: 75px;
-				}
-			}
-			.d-flex {
-			     display: flex;
-				 flex-wrap: wrap;
-			}
-			.day {
-				font-size: 2em;
-				color: #536DFE;
-				font-weight: bold;
-			}
-			.time {
-				width: 40%;
-				text-align: right;
-				font-size: 1.5em;
-				font-weight: bold;
-			}
-			.event_name {
-				font-weight: bold;
-				line-height: 20px;
-				color: grey;
-			}
-			.event_descr {
-				font-weight: normal;
-				font-size: 0.9em;
-				color: grey;
-			}
-			.v_align {
-				vertical-align: middle;
-			}
-			.actuallist li {
-				list-style-type: none; /* on annule la puce par défaut */
-				background-image: url(src/li.png); /* on affiche l'image souhaitée */
-				background-repeat: no-repeat; /* on annule la répétition par défaut */
-				background-position: left center; /* on positionne où l'on veut */
-				padding-left: 20px; /* pour éviter la superposition du contenu */
-			}
-			@media screen and (max-width:1000px) {
-				.brand-logo {
-					left:20% !important;
-				}
-			}
-			.googling-text {
-				color: #4285F4;
-			}
-			.blue-event {
-				height: 30vh;
-				background: url(blue-header.png) no-repeat center scroll;
-				-webkit-background-size: cover; /* pour anciens Chrome et Safari */
-				background-size: cover; /* version standardisée */
-			}
-
-
-			#pot{
-position:absolute;
--webkit-animation:linear infinite alternate;
--webkit-animation-name: run;
--webkit-animation-duration: 15s;
-}     
-@-webkit-keyframes run {
-    0% { left: 0;}
-    50%{ left : 100%;}
-    100%{ left: 0;}
-}
-		</style>
 	</head>
 	<body>
 	<header>
 		<div class="navbar-fixed">
-			<nav class="white z-depth-1">
+			<nav class="z-depth-1 nav-back-color">
 				<div class="nav-wrapper container">
 					<a href="#" class="brand-logo" style="margin-top: 6px;"><img alt="logo GDG Strasbourg" class="logo" height="50px;" src="src/logo.png"></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -187,16 +54,16 @@ position:absolute;
 	<br>
 	<div class="container" id="top">
 		<div class="col s12 m7">
-			<div class="card horizontal z-depth-0 green lighten-4" style="border-radius: 10px 10px 10px 10px;">
+			<div class="infoCard card horizontal z-depth-0 title-dark" style="border-radius: 10px 10px 10px 10px;">
 				<div class="card-content">
 					<p class="valign-wrapper"><i class="material-icons">campaign</i>&emsp; <b> Envie de proposer un talk ? Inscrivez-vous sur notre <a href="https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ" target="_blank">call for paper</a>.</b></p>
 				</div>
 			</div>
 		</div>
-		<h2 style="font-family: 'Product Sans';">Prochain meetup</h2>
+		<h2 style="font-family: 'Product Sans';" class="title-dark">Prochain meetup</h2>
 		<div style="display: none;" id="no_meetup" class="center-align">
 			<img alt="Aucun évenement prévu" src="src/no_event.png" width="300">
-			<br><span class="black-text">Aucun meetup prévu pour le moment, stay tuned</span><br><br>
+			<br><span class="title-dark">Aucun meetup prévu pour le moment, stay tuned</span><br><br>
 		</div>
 		<div id="meetup" class="z-depth-1" style="border-radius: 10px 10px 10px 10px;">
 			<div class="row">
@@ -204,8 +71,8 @@ position:absolute;
 					<img id="meetup_photo" style="width: 100%; position: relative; border-radius: 10px;">
 				</div>
 				<div class="col l12 xl5" style="padding-left: 20px;">
-					<h4 class="black-text" style="font-family: 'Product Sans';"><span id="meetup_name"></span></h4>
-					<span class="black-text valign-wrapper"><i class="material-icons">access_time</i>&nbsp;<span id="meetup_date"></span> &emsp;<i class="material-icons ">location_on</i> <span id="meetup_local"></span></span>
+					<h4 class="title-dark" style="font-family: 'Product Sans';"><span id="meetup_name"></span></h4>
+					<span class="title-dark valign-wrapper"><i class="material-icons">access_time</i>&nbsp;<span id="meetup_date"></span> &emsp;<i class="material-icons ">location_on</i> <span id="meetup_local"></span></span>
 					<br>
 					<br>
 					<a id="meetup_link" target="_blank" class="btn-large btn-flat blue white-text waves-effect waves-light valign-wrapper"><i class="material-icons left">arrow_forward</i>Inscription</a>
@@ -225,10 +92,10 @@ position:absolute;
 	</div>
 
 	<div class="container">
-		<h2 class="black-text truncate" style="font-family: 'Product Sans';">Nos événements</h2>
+		<h2 class="title-dark truncate" style="font-family: 'Product Sans';">Nos événements</h2>
 		<div class="row d-flex">
 			<div class="col s12 m6 d-flex">
-				<div class="card" style="border-radius: 10px;">
+				<div class="card card-white" style="border-radius: 10px;">
 					<div class="card-setheight">
 						<div class="card-image" style="border-radius: 10px 10px 0px 0px; background-image:url(src/vr.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; height: 150px;">
 							<span class="card-title valign-wrapper">DevFest</span>
@@ -243,7 +110,7 @@ position:absolute;
 				</div>
 			</div>
 			<div class="col s12 m6 d-flex">
-				<div class="card" style="border-radius: 10px;">
+				<div class="card card-white" style="border-radius: 10px;">
 					<div class="card-setheight">
 						<div class="card-image" style="border-radius: 10px 10px 0px 0px; background-image:url(src/live.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; height: 150px;">
 							<span class="card-title valign-wrapper">I/O Extended</span>
@@ -260,11 +127,11 @@ position:absolute;
 		</div>
 
 		<!-- Team -->
-		<h3 class="valign-wrapper" id="prog" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 2px;" class="material-icons googling-text">people_outline</i>&emsp;L'équipe</h3>
+		<h3 class="valign-wrapper title-dark" id="prog" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 2px;" class="material-icons googling-text">people_outline</i>&emsp;L'équipe</h3>
 	</div>
 	<div class="scrolling-wrapper">
 		<a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/colin-cleary-16022b159/">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/11.jpg">
 	              <span class="card-title">Colin</span>
@@ -275,7 +142,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/14.jpg">
 	              <span class="card-title">Thibaut</span>
@@ -286,7 +153,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/1.jpg">
 	              <span class="card-title">Frédéric</span>
@@ -297,7 +164,7 @@ position:absolute;
             </div>
         </a>
         <a href="https://www.linkedin.com/in/pauldecrosse/" target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/17.jpg">
 	              <span class="card-title">Paul</span>
@@ -308,7 +175,7 @@ position:absolute;
             </div>
         </a>
          <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/24.jpg">
 	              <span class="card-title">Timothée</span>
@@ -319,7 +186,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/20.jpg">
 	              <span class="card-title">Soizic</span>
@@ -330,7 +197,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/julien-le-bail-49360b1a9/">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/25.jpg">
 	              <span class="card-title">Julien</span>
@@ -341,7 +208,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/22.jpg">
 	              <span class="card-title">Michael</span>
@@ -352,7 +219,7 @@ position:absolute;
             </div>
         </a>
         <a href="https://www.linkedin.com/in/brunobellenoue/" target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/21.jpg">
 	              <span class="card-title">Bruno</span>
@@ -363,7 +230,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;" href="https://www.linkedin.com/in/jules-bozouklian/">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/4.jpg">
 	              <span class="card-title">Jules</span>
@@ -374,7 +241,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/23.jpg">
 	              <span class="card-title">Zaccharie</span>
@@ -385,7 +252,7 @@ position:absolute;
             </div>
         </a>
         <a target="_blank" style="color:inherit;">
-			<div style="border-radius:4px;" class="card card-theme waves-effect waves-light">
+			<div style="border-radius:4px;" class="card card-white card-theme waves-effect waves-light">
 	            <div class="card-image" style="height: 200px;">
 	              <img alt="photo de profil" style="width: 300px;" src="src/team/16.jpg">
 	              <span class="card-title">Guillaume</span>
@@ -399,7 +266,7 @@ position:absolute;
 	<div class="container">
 		<!-- Partners -->
 		<br><br>
-		<h3 id="acces" class="valign-wrapper" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">star_border</i>&emsp;Nos partenaires</h3>
+		<h3 id="acces" class="valign-wrapper title-dark" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">star_border</i>&emsp;Nos partenaires</h3>
 		<div class="row">
 			<div class="col s12 l6 center-align">
 				<a href="https://epitech.eu" target="_blank"><img alt="logo epitech" src="src/partners/epitech.png" width="200"></a>
@@ -410,12 +277,12 @@ position:absolute;
 		</div>
 		<br>
 		<!-- Contact -->
-		<h3 class="valign-wrapper" id="contact" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">mail_outline</i>&emsp;Nous contacter</h3>
+		<h3 class="valign-wrapper title-dark" id="contact" style="font-family: 'Product Sans';"><i style="font-size: 0.8em; margin-top: 4px;" class="material-icons googling-text">mail_outline</i>&emsp;Nous contacter</h3>
 		<div class="row">
 			<div class="col s12 m6">
-				<div class="card white horizontal" style="border-radius: 10px;">
+				<div class="card card-white horizontal" style="border-radius: 10px;">
 				    <div class="card-stacked">
-						<div class="card-content black-text">
+						<div class="card-content">
 							<span class="card-title">GDG Strasbourg</span>
 							<p>Une question ? Contactez notre association :
 								<ul class="actuallist" style="margin-top: -10px;">
@@ -427,9 +294,9 @@ position:absolute;
 						</div>
 					</div>
 				</div>
-				<div class="card white horizontal" style="border-radius: 10px;">
+				<div class="card card-white horizontal" style="border-radius: 10px;">
 				    <div class="card-stacked">
-						<div class="card-content black-text">
+						<div class="card-content">
 							<span class="card-title">Réseaux sociaux</span>
 							<p>
 								<ul class="actuallist">
@@ -449,9 +316,9 @@ position:absolute;
 		</div>
 
 
-		<div id = "pot">
+<!-- 		<div id = "pot">
 <img src = "https://www.pngkey.com/png/full/449-4499603_tram-png-transparent-tram-png.png" height ="100px">
-</div>
+</div> -->
 
 
 
@@ -464,7 +331,7 @@ position:absolute;
 					<p class="grey-text text-darken-1">Le GDG Strasbourg est un groupe d'échange et de partage autour du développement logiciel à Strasbourg. GDG Strasbourg est une association de droit local créée en 2019. Notre ambition est de faire croître l'attractivité numérique de la ville de Strasbourg.</p>
 				</div>
 				<div class="col l4 offset-l2 s12">
-					<h5 class="black-text">Ressources</h5>
+					<h5 class="title-dark">Ressources</h5>
 					<ul>
 						<li></li>
 						<li><a class="grey-text text-darken-1 modal-trigger" href="#coc">Code Of Conduct</a></li>
@@ -632,11 +499,16 @@ position:absolute;
 			      this.scrollLeft -= (delta * 80);
 
 			      event.preventDefault();
-		   	});
-
-	});
+		   		});
+			});
 
 		});
+	</script>
+	<script type="text/javascript">
+		if (window.matchMedia && 
+    		window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			 document.body.classList.toggle("dark-theme");
+		}
 	</script>
 	</body>
 </html>

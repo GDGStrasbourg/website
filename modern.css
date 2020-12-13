@@ -1,0 +1,158 @@
+@font-face {
+	font-family: "Product Sans";
+	src: url(assets/font/ProductSans.ttf) format("truetype");
+}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+nav.dark-theme {
+	background-color: #212121;
+}
+ .scrolling-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	padding: 0px;
+}
+.major {
+	font-weight: bold;
+	font-size: 7em;
+	margin-bottom: 0px;
+}
+.major2 {
+	font-weight: bold;
+	font-size: 4em;
+	margin-bottom: 0px;
+	margin-top: -30px;
+}
+.major3 {
+	font-weight: bold;
+	font-size: 3.5em;
+	margin-bottom: 0px;
+	margin-top: -10px;
+}
+.major4 {
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 0px;
+	margin-top: -5px;
+}
+.mob_only {
+	display: none;
+}
+.card-image {
+	height: 150px;
+}
+@media only screen and (max-width: 992px) {
+	.major {
+		font-size: 5em;
+	}
+	.major2 {
+		font-size: 4em;
+	}
+	.major3 {
+		font-size: 3.5em;
+	}
+	.major4 {
+		font-size: 3em;
+	}
+	.mob_only {
+		display: inline;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.logo {
+		position: absolute;
+		right: -175px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.card-image {
+		height: 75px;
+	}
+}
+.d-flex {
+     display: flex;
+	 flex-wrap: wrap;
+}
+.day {
+	font-size: 2em;
+	color: #536DFE;
+	font-weight: bold;
+}
+.time {
+	width: 40%;
+	text-align: right;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.event_name {
+	font-weight: bold;
+	line-height: 20px;
+	color: grey;
+}
+.event_descr {
+	font-weight: normal;
+	font-size: 0.9em;
+	color: grey;
+}
+.v_align {
+	vertical-align: middle;
+}
+.actuallist li {
+	list-style-type: none; /* on annule la puce par défaut */
+	background-image: url(src/li.png); /* on affiche l'image souhaitée */
+	background-repeat: no-repeat; /* on annule la répétition par défaut */
+	background-position: left center; /* on positionne où l'on veut */
+	padding-left: 20px; /* pour éviter la superposition du contenu */
+}
+@media screen and (max-width:1000px) {
+	.brand-logo {
+		left:20% !important;
+	}
+}
+.googling-text {
+	color: #4285F4;
+}
+.blue-event {
+	height: 30vh;
+	background: url(blue-header.png) no-repeat center scroll;
+	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+	background-size: cover; /* version standardisée */
+}
+
+
+/*STYLE DARKMODE*/
+
+.nav-back-color {
+	background-color: #FFFFFF;
+}
+body.dark-theme .nav-back-color{
+	background-color: #212121;
+}
+body {
+	background-color: white;
+}
+body.dark-theme {
+	background-color: black;
+}
+.card-white {
+	color: black;
+	background-color: white;
+}
+body.dark-theme .card-white{
+	color: white;
+	background-color: #212121;
+}
+.title-dark {
+	color: black;
+}
+body.dark-theme .title-dark{
+	color: white;
+}
+.infoCard {
+	background-color: #c8e6c9;
+}
+body.dark-theme .infoCard {
+	background-color: #004d40;
+}
