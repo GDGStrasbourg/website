@@ -75,7 +75,7 @@
 			<img alt="Aucun évenement prévu" src="src/no_event.png" width="300">
 			<br><span class="title-dark">Aucun meetup prévu pour le moment, stay tuned</span><br><br>
 		</div>
-		<div id="meetup" class="z-depth-1" style="border-radius: 10px 10px 10px 10px;">
+		<div id="meetup" class="z-depth-1 card-white" style="border-radius: 10px 10px 10px 10px; display: none;">
 			<div class="row">
 				<div class="col l12 xl5" style="padding: 0px;">
 					<img id="meetup_photo" style="width: 100%; position: relative; border-radius: 10px;">
@@ -442,18 +442,19 @@
 
 			function add_data(data) {
 				if (data.meta.total_count == 0) {
-					$('#meetup').hide();
 					$('#no_meetup').show();
+				} else {
+					$('#meetup').show();
+					$('#meetup_description').html(JSON.stringify(data.data[0].description));
+					$('#meetup_name').html(JSON.stringify(data.data[0].name).replace(/\"/g, ""));
+					ddate = JSON.stringify(data.data[0].time);
+					var stripped = Math.floor(ddate / 1e0);
+					var myDate = new Date(stripped);
+					id = data.data[0].created / (1e3);
+					$('#meetup_date').html(myDate.toLocaleString().slice(0, -3));
+					$('#meetup_local').html(JSON.stringify(data.data[0].venue.name).replace(/\"/g, ""));
+					$('#meetup_link').attr('href', JSON.stringify(data.data[0].link).replace(/\"/g, ""));
 				}
-				$('#meetup_description').html(JSON.stringify(data.data[0].description));
-				$('#meetup_name').html(JSON.stringify(data.data[0].name).replace(/\"/g, ""));
-				ddate = JSON.stringify(data.data[0].time);
-				var stripped = Math.floor(ddate / 1e0);
-				var myDate = new Date(stripped);
-				id = data.data[0].created / (1e3);
-				$('#meetup_date').html(myDate.toLocaleString().slice(0, -3));
-				$('#meetup_local').html(JSON.stringify(data.data[0].venue.name).replace(/\"/g, ""));
-				$('#meetup_link').attr('href', JSON.stringify(data.data[0].link).replace(/\"/g, ""));
 			}
 
 			function add_photo(photo) {
@@ -517,7 +518,7 @@
 	<script type="text/javascript">
 		if (window.matchMedia && 
     		window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			 document.body.classList.toggle("dark-theme");
+			document.body.classList.toggle("dark-theme");
 			document.getElementById("darkModeSwitch").checked = true;
 		}
 
