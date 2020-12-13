@@ -156,3 +156,25 @@ body.dark-theme .title-dark{
 body.dark-theme .infoCard {
 	background-color: #004d40;
 }
+
+
+/* width */
+.scrollCustom::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+}
+
+/* Track */
+.scrollCustom::-webkit-scrollbar-track:horizontal {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.scrollCustom::-webkit-scrollbar-thumb:horizontal {
+  background: #888; 
+}
+
+/* Handle on hover */
+.scrollCustom::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #555; 
+}
