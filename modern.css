@@ -178,3 +178,11 @@ body.dark-theme .infoCard {
 .scrollCustom::-webkit-scrollbar-thumb:horizontal:hover {
   background: #555; 
 }
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #FFC104;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #f93;
+}

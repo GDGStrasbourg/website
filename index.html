@@ -26,11 +26,21 @@
 					<a href="#" class="brand-logo" style="margin-top: 6px;"><img alt="logo GDG Strasbourg" class="logo" height="50px;" src="src/logo.png"></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#top">Accueil</a></li>
-						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#prog">Equipe</a></li>
+						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#prog">
+						Équipe</a></li>
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#acces">Partenaires</a></li>
 						<li><a style="font-weight: bold;" class="grey-text js-scrollTo" href="#contact">Contact</a></li>
 						<li><a href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank" style="border-radius: 100px;" class="btn blue waves-effect" href="https://www.meetup.com/fr-FR/GDG-Strasbourg" target="_blank">Rejoignez-nous</a></li>
 						<li><a href="https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ" target="_blank" style="border-radius: 100px;" class="btn green waves-effect">Proposer un talk</a></li>
+						<li>
+							<div class="switch">
+								<label>
+									<input id="darkModeSwitch" type="checkbox">
+									<span class="lever"></span>
+									<span style="vertical-align: middle; font-size: 18px !important;" class="material-icons">nights_stay</span>
+								</label>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -508,7 +518,13 @@
 		if (window.matchMedia && 
     		window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			 document.body.classList.toggle("dark-theme");
+			document.getElementById("darkModeSwitch").checked = true;
 		}
+
+		const checkbox = document.getElementById('darkModeSwitch')
+		checkbox.addEventListener('change', (event) => {
+			document.body.classList.toggle("dark-theme");
+		});
 	</script>
 	</body>
 </html>
