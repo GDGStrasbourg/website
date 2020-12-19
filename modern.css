@@ -156,7 +156,15 @@ body.dark-theme .title-dark{
 body.dark-theme .infoCard {
 	background-color: #004d40;
 }
-
+body.dark-theme .dark-lazy {
+	filter: invert(87%);
+}
+.page-footer {
+	background-color: #eeeeee;
+}
+body.dark-theme .page-footer {
+	background-color: #212121;
+}
 
 /* width */
 .scrollCustom::-webkit-scrollbar {
