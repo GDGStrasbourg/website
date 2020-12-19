@@ -42,7 +42,7 @@
 					<ul class="right hide-on-med-and-down">
 						<li><a href="#innov" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg">Vidéothèque</a></li>
 						<li><a href="#about" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg">Qui sommes nous</a></li>
-						<!-- <li><a href="#about" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg pulse"><i style="color: white;" class="material-icons waves-effect waves-light">notifications</i></a></li> -->
+						<li><a href="#about" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg"><i style="color: white;" class="material-icons waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Activez les notifications pour ne pas louper les prochains épisodes">notifications</i></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -53,7 +53,7 @@
 					<div class="col s12 m6 l7 x13">
 						<div style="position: absolute; left:10%; width: 40%;" class="hide-on-small-only">
 							<!-- <img style="width: 100%; object-fit: cover; object-position: 0%;" src="placeholder.png" height="450" /> -->
-							<iframe style="width: 100%;" height="450" src="https://www.youtube.com/embed/_ZhlEYR8hJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe style="width: 100%;" height="450" src="https://www.youtube.com/embed/mMF8gY9fU_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							<br>
 							<b><a class="js-scrollTo white-text blue-real-bg" href="#innov">Parcourir tous nos épisodes</a></b>
 						</div>
@@ -96,16 +96,6 @@
 									<div class="card-content black-text">
 										<span class="card-title" style="text-align: left; color: blue;">AI & ML avec la Google Cloud Platform</span>
 										<p>Dans cet épisode les colocataires parlent des possibilités offertes par Google en matière d'IA et de ML.</p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col s6">
-							<a href="https://www.youtube.com/watch?v=_ZhlEYR8hJs" target="_blank">
-								<div class="card white hoverable">
-									<div class="card-content black-text">
-										<span class="card-title" style="text-align: left; color: blue;">Interface Cerveau-Machine</span>
-										<p>La colocation s'intéresse aux possibilités offertes par le contrôle d'objets directement depuis le cerveau.</p>
 									</div>
 								</div>
 							</a>
@@ -157,6 +147,7 @@
 				$('html, body').animate( { scrollTop: $(page).offset().top - 50 }, speed ); // Go
 				return false;
 			});
+			$('.tooltipped').tooltip();
 		});
 		$(function() {
 			var header = $(".navinavi");
