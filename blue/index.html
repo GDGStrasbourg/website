@@ -42,7 +42,7 @@
 					<ul class="right hide-on-med-and-down">
 						<li><a href="#innov" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg">Vidéothèque</a></li>
 						<li><a href="#about" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg">Qui sommes nous</a></li>
-						<li><a href="#about" class="js-scrollTo waves-effect waves-light btn-flat white-text rounded blue-real-bg"><i style="color: white;" class="material-icons waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Activez les notifications pour ne pas louper les prochains épisodes">notifications</i></a></li>
+						<li><a onclick="enableNotification()" class="waves-effect waves-light btn-flat white-text rounded blue-real-bg"><i style="color: white;" class="material-icons waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Activez les notifications pour ne pas louper les prochains épisodes">notifications</i></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -136,6 +136,61 @@
 			</div>
 		</div>
 	</footer>
+	<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+    <script>
+        MsgElem = document.getElementById("msg");
+        TokenElem = document.getElementById("token");
+        NotisElem = document.getElementById("notis");
+        ErrElem = document.getElementById("err");
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            'messagingSenderId': '276212992139',
+            'apiKey': 'AIzaSyBf2X9WgS264j2aFivV03-K_hzD22GpnM4',
+            'projectId': 'gdg-strasbourg-vitrine',
+            'appId': '1:276212992139:web:14dfc336202a931c802c8e',
+        };
+        var app = firebase.initializeApp(config);
+        const db = app.firestore();
+
+        const messaging = firebase.messaging();
+        function enableNotification() {
+            messaging
+            .requestPermission()
+            .then(function () {
+               /* MsgElem.innerHTML = "Notification permission granted." */
+                console.log("Notification permission granted.");
+                
+                // get the token in the form of promise
+                return messaging.getToken()
+            })
+            .then(function(token) {
+                /*TokenElem.innerHTML = "token is : " + token*/
+                db.collection("NotificationSubscribers").doc(token).set({
+                    value: true,
+                })
+            })
+            .catch(function (err) {
+                /*ErrElem.innerHTML =  ErrElem.innerHTML + "; " + err
+                console.log("Unable to get permission to notify.", err);*/
+            });
+            
+        }
+        let enableForegroundNotification = true;
+        messaging.onMessage(function(payload) {
+            console.log("Message received. ", payload);
+            /*NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload);*/
+
+            if(enableForegroundNotification) {
+                const {title, ...options} = JSON.parse(payload.data.notification);
+                navigator.serviceWorker.getRegistrations().then(registration => {
+                    registration[0].showNotification(title, options);
+                });
+            }
+        });
+    </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
 	<script>
