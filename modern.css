@@ -116,7 +116,7 @@ nav.dark-theme {
 }
 .blue-event {
 	height: 30vh;
-	background: url(blue-header.png) no-repeat center scroll;
+	background: url(ggj-header.jpg) no-repeat center scroll;
 	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
 	background-size: cover; /* version standardisée */
 }
@@ -174,17 +174,17 @@ body.dark-theme .page-footer {
 
 /* Track */
 .scrollCustom::-webkit-scrollbar-track:horizontal {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 .scrollCustom::-webkit-scrollbar-thumb:horizontal {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 .scrollCustom::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #555; 
+  background: #555;
 }
 
 .switch label input[type=checkbox]:checked+.lever {
