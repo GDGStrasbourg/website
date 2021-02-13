@@ -87,6 +87,25 @@ box-shadow: 0 2px 2px 0 blue, 0 3px 1px -2px blue, 0 1px 5px 0 blue;
 	background-color: blue;
 }
 
-.footer-copyright {
+/*.footer-copyright {
 	margin-left: -17vw;
+}*/
+
+.degage-content {
+	position: absolute;
+	left: 10em;
+}
+@media only screen and (max-width: 992px) {
+	.degage-content {
+		left: 0em;
+	}
+}
+
+.mob_only {
+	display: none;
+}
+@media only screen and (max-width: 992px) {
+	.mob_only {
+		display: inline;
+	}
 }
