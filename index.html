@@ -77,8 +77,8 @@
 		<div id="meetup" class="z-depth-1 card-white" style="border-radius: 10px 10px 10px 10px; display: none;">
 			<div class="row">
 				<div class="col l12 xl5" style="padding: 0px;">
-					<!-- <img id="meetup_photo" style="width: 100%; position: relative; border-radius: 10px;"> -->
-					<img src="https://secure.meetupstatic.com/photos/event/4/b/6/a/600_493939306.jpeg" style="width: 100%; position: relative; border-radius: 10px;">
+					<img id="meetup_photo" style="width: 100%; position: relative; border-radius: 10px;">
+					<!-- <img src="https://secure.meetupstatic.com/photos/event/4/b/6/a/600_493939306.jpeg" style="width: 100%; position: relative; border-radius: 10px;"> -->
 				</div>
 				<div class="col l12 xl5" style="padding-left: 20px;">
 					<h4 class="title-dark" style="font-family: 'Product Sans';"><span id="meetup_name"></span></h4>
@@ -412,28 +412,30 @@
 
 			function add_data(data) {
 				$('#meetup').show();
-				$('#meetup_description').html(JSON.stringify(data.description));
-				$('#meetup_name').html(JSON.stringify(data.title).replace(/\"/g, ""));
-				ddate = JSON.stringify(data.start_date);
-				var stripped = Math.floor(ddate / 1e0);
-				var myDate = new Date(stripped);
-				id = data.data[0].created / (1e3);
-				$('#meetup_date').html(myDate.toLocaleString().slice(0, -3));
-				$('#meetup_local').html(JSON.stringify(data.venue_name).replace(/\"/g, ""));
-				$('#meetup_link').attr('href', JSON.stringify(data.url).replace(/\"/g, ""));
-				lpic = JSON.stringify(data.picture.url).replace(/\"/g, "");
+				$('#meetup_description').html(data.description_short);
+				$('#meetup_name').html(data.title);
+				date = data.start_date_naive;
+				date = date.replace("T", " ").replace("-", "/").replace("-", "/").replace(":", "h").slice(0, -3);
+				$('#meetup_date').html(date);
+				if (data.venue_name == null) {
+					$('#meetup_local').html("Online");
+				} else {
+					$('#meetup_local').html(data.venue_name);
+				}
+				$('#meetup_link').attr('href', data.url);
+				lpic = data.banner.url.replace(/\"/g, "");
                 hpic = lpic.replace("global", "600");
                 $('#meetup_photo').attr('src', hpic);
 			}
 
 			$.ajax({
 				type:"GET", // GET = requesting data
-				url:"https://bevy.example.com/api/event",
+				url:"https://gdg.community.dev/api/chapter/333/event/",
 				success: function(data) {
 					successCallBack(data);
 				},
 				// error: function()
-				dataType: 'jsonp',
+				dataType: 'json',
 			});
 
 			function successCallBack(data) {
@@ -442,7 +444,7 @@
 				} else {
 					$.ajax({
 						type:"GET",
-						url:"https://bevy.example.com/api/event/$(data.results[0].id)",
+						url:"https://gdg.community.dev/api/event/" + data.results[0].id,
 						success: function(event_data) {
 							add_data(event_data);
 						},
