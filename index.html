@@ -81,7 +81,7 @@
 		<div id="meetup" class="z-depth-1 card-white" style="border-radius: 10px 10px 10px 10px; display: none;">
 			<div class="row">
 				<div class="col l12 xl5" style="padding: 0px;">
-					<img src="meetup_placeholder.png" style="width: 100%; position: relative; border-radius: 10px;">
+					<img id="meetup_photo" style="width: 100%; position: relative; border-radius: 10px;">
 				</div>
 				<div class="col l12 xl5" style="padding-left: 20px;">
 					<h4 class="title-dark" style="font-family: 'Product Sans';"><span id="meetup_name"></span></h4>
@@ -423,69 +423,47 @@
 			var day = 86400 //One day in timestamp (unix)
 			var week = day * 7 // One week in timestamp (unix)
 			var halfweek = week / 2;
-			var save_newer = -1;
-			var save_date = 0;
-
-			/*---------------------*\
-			| THIS IS A TEMP METHOD,|
-			| WAIT FOR THE API TO   |
-			|      BE FIXED.        |
-			| CALL PAUL DECROSSE FOR|
-			|      EXPLANATIONS     |
-			|   ADD PHOTO TAKE THE  |
-			|       LAST PHOTOS     |
-			\*---------------------*/
 
 			function add_data(data) {
-				if (data.meta.total_count == 0) {
-					$('#no_meetup').show();
+				$('#meetup').show();
+				$('#meetup_description').html(data.description_short);
+				$('#meetup_name').html(data.title);
+				date = data.start_date_naive;
+				date = date.replace("T", " ").replace("-", "/").replace("-", "/").replace(":", "h").slice(0, -3);
+				$('#meetup_date').html(date);
+				if (data.venue_name == null) {
+					$('#meetup_local').html("Online");
 				} else {
-					$('#meetup').show();
-					$('#meetup_description').html(JSON.stringify(data.data[0].description));
-					$('#meetup_name').html(JSON.stringify(data.data[0].name).replace(/\"/g, ""));
-					ddate = JSON.stringify(data.data[0].time);
-					var stripped = Math.floor(ddate / 1e0);
-					var myDate = new Date(stripped);
-					id = data.data[0].created / (1e3);
-					$('#meetup_date').html(myDate.toLocaleString().slice(0, -3));
-					$('#meetup_local').html(JSON.stringify(data.data[0].venue.name).replace(/\"/g, ""));
-					$('#meetup_link').attr('href', JSON.stringify(data.data[0].link).replace(/\"/g, ""));
+					$('#meetup_local').html(data.venue_name);
 				}
-			}
-
-			function add_photo(photo) {
-				for (var i = photo.length - 1; i >= 0; i--) {
-					if (save_newer == -1) {
-						save_newer = i;
-						save_date = photo[i].created;
-					} else if (photo[i].created > save_date) {
-						save_newer = i;
-					}
-				}
-                lpic = JSON.stringify(photo[save_newer].photo_link).replace(/\"/g, "");
+				$('#meetup_link').attr('href', data.url);
+				lpic = data.banner.url.replace(/\"/g, "");
                 hpic = lpic.replace("global", "600");
                 $('#meetup_photo').attr('src', hpic);
 			}
 
 			$.ajax({
 				type:"GET", // GET = requesting data
-				url:"https://api.meetup.com/GDG-Strasbourg/events?&sign=true&photo-host=public&page=20",
+				url:"https://gdg.community.dev/api/chapter/333/event/",
 				success: function(data) {
-					add_data(data);
-					successCallBack();
+					successCallBack(data);
 				},
 				// error: function()
-				dataType: 'jsonp',
+				dataType: 'json',
 			});
 
-			function successCallBack() {
-				$.ajax({
-					type:"GET",
-					url:"https://cors-anywhere.herokuapp.com/https://api.meetup.com/GDG-Strasbourg/photos?&sign=true&photo-host=public",
-					success: function(photo) {
-						add_photo(photo);
-					},
-				})
+			function successCallBack(data) {
+				if (data.count == 0) {
+					$('#no_meetup').show();
+				} else {
+					$.ajax({
+						type:"GET",
+						url:"https://gdg.community.dev/api/event/" + data.results[0].id,
+						success: function(event_data) {
+							add_data(event_data);
+						},
+					})
+				}
 			}
 
 			$('.parallax').parallax();
