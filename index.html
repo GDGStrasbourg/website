@@ -444,6 +444,11 @@
 			var halfweek = week / 2;
 
 			function add_data(data) {
+				if (new Date(data.end_date_naive) < Date.now()) {
+					$('#no_meetup').show();
+					return;
+				}
+
 				$('#meetup').show();
 				$('#meetup_description').html(data.description_short);
 				$('#meetup_name').html(data.title);
