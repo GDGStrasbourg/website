@@ -47,16 +47,16 @@
 				</div>
 			</nav>
 		</div>
-		
+
 		<a style="position: absolute; top: 10px; right: 10px; z-index: 99999;"  onclick="enableNotification()" class="waves-effect waves-light btn-flat white-text rounded blue-real-bg mob_only"><i style="color: white;" class="material-icons waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Activez les notifications pour ne pas louper les prochains épisodes">notifications</i></a>
-	
+
 		<div class="toper" id="top">
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m6 l7 x13">
 						<div style="position: absolute; left:10%; width: 40%;" class="hide-on-small-only">
 							<!-- <img style="width: 100%; object-fit: cover; object-position: 0%;" src="placeholder.png" height="450" /> -->
-							<iframe style="width: 100%;" height="450" src="https://www.youtube.com/embed/_ZhlEYR8hJs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe style="width: 100%;" height="450" src="https://www.youtube.com/embed/3CLJ83a_JlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							<br>
 							<b><a class="js-scrollTo white-text blue-real-bg" href="#innov">Parcourir tous nos épisodes</a></b>
 						</div>
@@ -76,14 +76,14 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="innov" style="height: 100vh; margin: 0px; padding: 0px; background-color: #090f45;">
 		<div class="row" style="background-color: #090f45;">
 			<div class="col s12 l6 white-text valign-wrapper" style="min-height: 100vh; text-align: justify; background-color: #090f45;">
 				<div class="container">
 					<h2 style="text-align: left;">Découvrez notre <span style="color: blue;">vidéothèque</span>.</h2>
 					<div class="row">
-						<div class="col s12 l6"> 
+						<div class="col s12 l6">
 							<a href="https://youtube.com/watch?v=jRghIpRYWgw" target="_blank">
 								<div class="card white hoverable">
 									<div class="card-content black-text">
@@ -103,15 +103,25 @@
 								</div>
 							</a>
 						</div>
-						<div class="col s12 l6">	
-							<a href="https://www.youtube.com/watch?v=_ZhlEYR8hJs" target="_blank">	
-								<div class="card white hoverable">	
-									<div class="card-content black-text">	
-										<span class="card-title" style="text-align: left; color: blue;">Interface Cerveau-Machine</span>	
-										<p>La colocation s'intéresse aux possibilités offertes par le contrôle d'objets directement depuis le cerveau.</p>	
-									</div>	
-								</div>	
-							</a>	
+						<div class="col s12 l6">
+							<a href="https://www.youtube.com/watch?v=_ZhlEYR8hJs" target="_blank">
+								<div class="card white hoverable">
+									<div class="card-content black-text">
+										<span class="card-title" style="text-align: left; color: blue;">Interface Cerveau-Machine</span>
+										<p>La colocation s'intéresse aux possibilités offertes par le contrôle d'objets directement depuis le cerveau.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col s12 l6">
+							<a href="https://www.youtube.com/watch?v=3CLJ83a_JlA" target="_blank">
+								<div class="card white hoverable">
+									<div class="card-content black-text">
+										<span class="card-title" style="text-align: left; color: blue;">Fast Identity Online</span>
+										<p>Comment sécuriser vos comptes, vos serveurs avec de vrais solutions de double authentification, robustes et fiables ?</p>
+									</div>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -138,7 +148,7 @@
 				</div>
 			</div>
 			<div class="col s12 l6">
-				
+
 			</div>
 		</div>
 	</div>
@@ -175,7 +185,7 @@
             .then(function () {
                /* MsgElem.innerHTML = "Notification permission granted." */
                 console.log("Notification permission granted.");
-                
+
                 // get the token in the form of promise
                 return messaging.getToken()
             })
@@ -189,7 +199,7 @@
                 /*ErrElem.innerHTML =  ErrElem.innerHTML + "; " + err
                 console.log("Unable to get permission to notify.", err);*/
             });
-            
+
         }
         let enableForegroundNotification = true;
         messaging.onMessage(function(payload) {
