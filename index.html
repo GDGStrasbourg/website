@@ -4,9 +4,10 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141199107-2"></script>
 		<script>
 		function get_data() {
-			console.log("data collected")
+			// console.log("data collected")
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
+			//console.log(arguments)
 			gtag('js', new Date());
 			gtag('config', 'UA-141199107-3');
 		}
@@ -543,17 +544,15 @@
 	</script>
 	<script type="text/javascript">
 		var btn_agree = document.getElementById('btn_agree_popup')
-		var btn_close = document.getElementById('btn_close_popup')
 		var btn_none = document.getElementById('btn_none_agree_popup')
 		var overlay = document.getElementById('overlay')
-		btn_close.addEventListener('click', close)
 		btn_none.addEventListener('click', close)
 		btn_agree.addEventListener('click', agree)
 		function close(){
-			console.log("none approuved")
+			//console.log("none approuved")
 		}
 		function agree(){
-			console.log("approuved")
+			//console.log("approuved")
 			get_data()
 		}
 	</script>
