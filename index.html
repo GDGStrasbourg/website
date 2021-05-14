@@ -4,10 +4,8 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141199107-2"></script>
 		<script>
 		function get_data() {
-			// console.log("data collected")
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
-			//console.log(arguments)
 			gtag('js', new Date());
 			gtag('config', 'UA-141199107-3');
 		}
@@ -545,21 +543,37 @@
 	<script type="text/javascript">
 		var btn_agree = document.getElementById('btn_agree_popup')
 		var btn_none = document.getElementById('btn_none_agree_popup')
-		var overlay = document.getElementById('overlay')
 		btn_none.addEventListener('click', close)
 		btn_agree.addEventListener('click', agree)
+		date_of_response = new Date()
+		date_of_response.setTime(date_of_response.getTime() + (365*24*60*60*1000));
+        expires = "; expires=" + date_of_response.toUTCString();
 		function close(){
-			//console.log("none approuved")
+			document.cookie = "rgpd state=0" + expires + "; path=/"
 		}
 		function agree(){
-			//console.log("approuved")
+			document.cookie = "rgpd state=1" + expires + "; path=/"
 			get_data()
 		}
 	</script>
 	<script>
 		$(document).ready(function(){
-		   $('#modal_RGPD').modal();
-		   $('#modal_RGPD').modal('open'); 
+		   	$('#modal_RGPD').modal();
+			val = -1
+			ca = document.cookie.split(';');
+			for (i = 0; i < ca.length; i++) {
+			    c = ca[i];
+    			while (c.charAt(0) == ' ') {
+				      c = c.substring(1);
+    			}
+			    if (c.indexOf("rgpd state=") == 0) {
+    			  val = c.substring("rgpd state=".length, c.length);
+    			}
+			}
+		   	if (val == -1)
+				$('#modal_RGPD').modal('open');
+			if (val == 1)
+				get_data()
 		});
 	</script>
 	</body>
