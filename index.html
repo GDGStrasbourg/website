@@ -448,6 +448,10 @@
 					$('#no_meetup').show();
 					return;
 				}
+				if (data.title == "Devfest Strasbourg 2021") {
+					$('#no_meetup').show();
+					return;
+				}
 
 				$('#meetup').show();
 				$('#meetup_description').html(data.description_short);
