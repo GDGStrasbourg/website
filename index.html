@@ -3,10 +3,12 @@
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141199107-2"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-141199107-3');
+		function get_data() {
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-141199107-3');
+		}
 		</script>
 		<title>GDG Strasbourg</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,6 +18,7 @@
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
 		<link type="text/css" rel="stylesheet" href="modern.css"  media="screen,projection"/>
 		<link rel="icon" href="favicon.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
 	<header>
@@ -350,6 +353,18 @@
 		<img class="dark-lazy" alt="Strasbourg Skyline" src="src/footer.png" style="width: 100%;">
 	</div>
 	<footer class="page-footer">
+		<div id="modal_RGPD" class="modal bottom-sheet">
+			<div class="modal-content">
+				<h2 class="black-text">
+					This website uses cookies
+				</h2>
+				<span class="black-text">We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services</span>
+			</div>
+			<div class="modal-footer">
+					<button id="btn_agree_popup" class="modal-close btn green">Agree</button>
+					<button id="btn_none_agree_popup" class="modal-close btn red" style="float: right;">None Agree</button>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12">
@@ -527,6 +542,42 @@
 		const checkbox = document.getElementById('darkModeSwitch')
 		checkbox.addEventListener('change', (event) => {
 			document.body.classList.toggle("dark-theme");
+		});
+	</script>
+	<script type="text/javascript">
+		var btn_agree = document.getElementById('btn_agree_popup')
+		var btn_none = document.getElementById('btn_none_agree_popup')
+		btn_none.addEventListener('click', close)
+		btn_agree.addEventListener('click', agree)
+		date_of_response = new Date()
+		date_of_response.setTime(date_of_response.getTime() + (365*24*60*60*1000));
+        expires = "; expires=" + date_of_response.toUTCString();
+		function close(){
+			document.cookie = "rgpd state=0" + expires + "; path=/"
+		}
+		function agree(){
+			document.cookie = "rgpd state=1" + expires + "; path=/"
+			get_data()
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+		   	$('#modal_RGPD').modal();
+			val = -1
+			ca = document.cookie.split(';');
+			for (i = 0; i < ca.length; i++) {
+			    c = ca[i];
+    			while (c.charAt(0) == ' ') {
+				      c = c.substring(1);
+    			}
+			    if (c.indexOf("rgpd state=") == 0) {
+    			  val = c.substring("rgpd state=".length, c.length);
+    			}
+			}
+		   	if (val == -1)
+				$('#modal_RGPD').modal('open');
+			if (val == 1)
+				get_data()
 		});
 	</script>
 	</body>
