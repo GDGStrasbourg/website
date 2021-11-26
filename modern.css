@@ -116,7 +116,7 @@ nav.dark-theme {
 }
 .blue-event {
 	height: 30vh;
-	background: url(hash-header.gif) no-repeat center scroll;
+	background: url(devfest-header.jpg) no-repeat center scroll;
 	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
 	background-size: cover; /* version standardisée */
 }
@@ -193,4 +193,21 @@ body.dark-theme .page-footer {
 
 .switch label input[type=checkbox]:checked+.lever:after {
   background-color: #f93;
+}
+
+.inline-icon {
+	font-size: 1em !important;
+ }
+
+ .flex {
+	display: flex;
+	flex-wrap: wrap;
+  }
+
+.title-max {
+	font-size: 5em;
+}
+
+.title-min {
+	font-size: 2em;
 }
