@@ -194,3 +194,20 @@ body.dark-theme .page-footer {
 .switch label input[type=checkbox]:checked+.lever:after {
   background-color: #f93;
 }
+
+.team-section {
+	padding: 30px;
+	background: rgb(103,113,255);
+	background: linear-gradient(110deg, rgba(103,113,255,0.8239670868347339) 0%, rgba(179,0,255,0.896796218487395) 100%);
+	text-align: center;
+}
+
+.member-name {
+	z-index: 999;
+	color: white;
+	position: relative;
+	bottom: 30px;
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
+}
