@@ -1,0 +1,260 @@
+[debug] [2022-01-17T22:32:37.323Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T22:32:37.324Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-17T22:32:37.324Z] CLI Version:   9.16.6
+[debug] [2022-01-17T22:32:37.324Z] Platform:      win32
+[debug] [2022-01-17T22:32:37.325Z] Node Version:  v14.18.1
+[debug] [2022-01-17T22:32:37.325Z] Time:          Mon Jan 17 2022 23:32:37 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-01-17T22:32:37.326Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T22:32:37.375Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T22:32:37.375Z] > authorizing via signed-in user (contact@gdgstrasbourg.fr)
+[debug] [2022-01-17T22:32:37.375Z] [iam] checking project gdg-strasbourg-vitrine for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T22:32:37.377Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gdg-strasbourg-vitrine:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T22:32:38.012Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:32:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=559","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:32:38.014Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T22:32:38.014Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:32:38.098Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 17 Jan 2022 22:32:37 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:32:38.117Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine [none]
+[debug] [2022-01-17T22:32:38.342Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine 200
+[debug] [2022-01-17T22:32:38.342Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine {"projectId":"gdg-strasbourg-vitrine","projectNumber":"276212992139","displayName":"GDG Strasbourg vitrine","name":"projects/gdg-strasbourg-vitrine","resources":{"hostingSite":"gdg-strasbourg-vitrine","realtimeDatabaseInstance":"gdg-strasbourg-vitrine","storageBucket":"gdg-strasbourg-vitrine.appspot.com","locationId":"europe-west3"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gdg-strasbourg-vitrine'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T22:32:38.347Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T22:32:38.347Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:32:38.427Z] <<< HTTP RESPONSE 200 {"date":"Mon, 17 Jan 2022 22:32:37 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:32:38.438Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gdg-strasbourg-vitrine/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/meetup","location":"https://gdg.community.dev/gdg-strasbourg/","statusCode":301},{"glob":"/youtube","location":"http://youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q","statusCode":301},{"glob":"/fb","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/facebook","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/twitter","location":"https://twitter.com/gdgStrasbourg","statusCode":301},{"glob":"/lknd","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/linkedin","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/instagram","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/insta","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/twitch","location":"https://twitch.tv/gdgstrasbourg/","statusCode":301},{"glob":"/tiktok","location":"https://www.tiktok.com/@GDGStrasbourg","statusCode":301},{"glob":"/BLUE","location":"/blue","statusCode":301},{"glob":"/devfest","location":"https://devfest.gdgstrasbourg.fr","statusCode":301},{"glob":"/io","location":"https://io.gdgstrasbourg.fr","statusCode":301},{"glob":"/unexpected","location":"https://unexpected.gdgstrasbourg.fr","statusCode":301},{"glob":"/cfp","location":"https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ","statusCode":301}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T22:32:39.581Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:32:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gdg-strasbourg-vitrine]: beginning deploy... 
+[debug] [2022-01-17T22:32:39.675Z] Error: EPERM: operation not permitted, scandir 'C:/UwAmp/www/gdg/public/firebase-debug.log'
+    at Object.readdirSync (fs.js:1047:3)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:286:41)
+    at GlobSync._readdirInGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:243:17)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:274:17)
+    at GlobSync._processReaddir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:135:22)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:378:10)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:128:10)
+    at new GlobSync (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:46:10)
+    at Function.globSync [as sync] (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:24:10)
+    at Object.listFiles (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:19)
+    at runDeploys (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:42:35)
+    at deploy (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:73:12)
+    at _chain (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-01-17T22:33:01.839Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T22:33:01.841Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-17T22:33:01.841Z] CLI Version:   9.16.6
+[debug] [2022-01-17T22:33:01.842Z] Platform:      win32
+[debug] [2022-01-17T22:33:01.842Z] Node Version:  v14.18.1
+[debug] [2022-01-17T22:33:01.842Z] Time:          Mon Jan 17 2022 23:33:01 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-01-17T22:33:01.843Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T22:33:01.893Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T22:33:01.893Z] > authorizing via signed-in user (contact@gdgstrasbourg.fr)
+[debug] [2022-01-17T22:33:01.893Z] [iam] checking project gdg-strasbourg-vitrine for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T22:33:01.895Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gdg-strasbourg-vitrine:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T22:33:02.520Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:33:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=549","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:02.522Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T22:33:02.523Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:33:02.604Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 17 Jan 2022 22:33:01 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:02.623Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine [none]
+[debug] [2022-01-17T22:33:02.831Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine 200
+[debug] [2022-01-17T22:33:02.831Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine {"projectId":"gdg-strasbourg-vitrine","projectNumber":"276212992139","displayName":"GDG Strasbourg vitrine","name":"projects/gdg-strasbourg-vitrine","resources":{"hostingSite":"gdg-strasbourg-vitrine","realtimeDatabaseInstance":"gdg-strasbourg-vitrine","storageBucket":"gdg-strasbourg-vitrine.appspot.com","locationId":"europe-west3"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gdg-strasbourg-vitrine'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T22:33:02.836Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T22:33:02.836Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:33:02.921Z] <<< HTTP RESPONSE 200 {"date":"Mon, 17 Jan 2022 22:33:02 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:02.939Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gdg-strasbourg-vitrine/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/meetup","location":"https://gdg.community.dev/gdg-strasbourg/","statusCode":301},{"glob":"/youtube","location":"http://youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q","statusCode":301},{"glob":"/fb","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/facebook","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/twitter","location":"https://twitter.com/gdgStrasbourg","statusCode":301},{"glob":"/lknd","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/linkedin","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/instagram","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/insta","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/twitch","location":"https://twitch.tv/gdgstrasbourg/","statusCode":301},{"glob":"/tiktok","location":"https://www.tiktok.com/@GDGStrasbourg","statusCode":301},{"glob":"/BLUE","location":"/blue","statusCode":301},{"glob":"/devfest","location":"https://devfest.gdgstrasbourg.fr","statusCode":301},{"glob":"/io","location":"https://io.gdgstrasbourg.fr","statusCode":301},{"glob":"/unexpected","location":"https://unexpected.gdgstrasbourg.fr","statusCode":301},{"glob":"/cfp","location":"https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ","statusCode":301}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T22:33:04.189Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:33:03 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gdg-strasbourg-vitrine]: beginning deploy... 
+[debug] [2022-01-17T22:33:04.291Z] Error: EPERM: operation not permitted, scandir 'C:/UwAmp/www/gdg/public/firebase-debug.log'
+    at Object.readdirSync (fs.js:1047:3)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:286:41)
+    at GlobSync._readdirInGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:243:17)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:274:17)
+    at GlobSync._processReaddir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:135:22)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:378:10)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:128:10)
+    at new GlobSync (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:46:10)
+    at Function.globSync [as sync] (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:24:10)
+    at Object.listFiles (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:19)
+    at runDeploys (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:42:35)
+    at deploy (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:73:12)
+    at _chain (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-01-17T22:33:45.483Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T22:33:45.486Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-17T22:33:45.486Z] CLI Version:   9.16.6
+[debug] [2022-01-17T22:33:45.486Z] Platform:      win32
+[debug] [2022-01-17T22:33:45.486Z] Node Version:  v14.18.1
+[debug] [2022-01-17T22:33:45.487Z] Time:          Mon Jan 17 2022 23:33:45 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-01-17T22:33:45.487Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T22:33:45.538Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T22:33:45.538Z] > authorizing via signed-in user (contact@gdgstrasbourg.fr)
+[debug] [2022-01-17T22:33:45.538Z] [iam] checking project gdg-strasbourg-vitrine for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T22:33:45.540Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gdg-strasbourg-vitrine:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T22:33:46.179Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:33:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=554","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:46.181Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T22:33:46.181Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:33:46.281Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 17 Jan 2022 22:33:45 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:46.296Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine [none]
+[debug] [2022-01-17T22:33:46.517Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine 200
+[debug] [2022-01-17T22:33:46.517Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine {"projectId":"gdg-strasbourg-vitrine","projectNumber":"276212992139","displayName":"GDG Strasbourg vitrine","name":"projects/gdg-strasbourg-vitrine","resources":{"hostingSite":"gdg-strasbourg-vitrine","realtimeDatabaseInstance":"gdg-strasbourg-vitrine","storageBucket":"gdg-strasbourg-vitrine.appspot.com","locationId":"europe-west3"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gdg-strasbourg-vitrine'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T22:33:46.522Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T22:33:46.522Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:33:46.604Z] <<< HTTP RESPONSE 200 {"date":"Mon, 17 Jan 2022 22:33:45 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:33:46.622Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gdg-strasbourg-vitrine/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/meetup","location":"https://gdg.community.dev/gdg-strasbourg/","statusCode":301},{"glob":"/ggj","location":"/ggj/index.html","statusCode":301},{"glob":"/youtube","location":"http://youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q","statusCode":301},{"glob":"/fb","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/facebook","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/twitter","location":"https://twitter.com/gdgStrasbourg","statusCode":301},{"glob":"/lknd","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/linkedin","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/instagram","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/insta","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/twitch","location":"https://twitch.tv/gdgstrasbourg/","statusCode":301},{"glob":"/tiktok","location":"https://www.tiktok.com/@GDGStrasbourg","statusCode":301},{"glob":"/BLUE","location":"/blue","statusCode":301},{"glob":"/devfest","location":"https://devfest.gdgstrasbourg.fr","statusCode":301},{"glob":"/io","location":"https://io.gdgstrasbourg.fr","statusCode":301},{"glob":"/unexpected","location":"https://unexpected.gdgstrasbourg.fr","statusCode":301},{"glob":"/cfp","location":"https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ","statusCode":301}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T22:33:47.809Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:33:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gdg-strasbourg-vitrine]: beginning deploy... 
+[debug] [2022-01-17T22:33:47.906Z] Error: EPERM: operation not permitted, scandir 'C:/UwAmp/www/gdg/public/firebase-debug.log'
+    at Object.readdirSync (fs.js:1047:3)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:286:41)
+    at GlobSync._readdirInGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:243:17)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:274:17)
+    at GlobSync._processReaddir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:135:22)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:378:10)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:128:10)
+    at new GlobSync (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:46:10)
+    at Function.globSync [as sync] (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:24:10)
+    at Object.listFiles (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:19)
+    at runDeploys (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:42:35)
+    at deploy (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:73:12)
+    at _chain (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-01-17T22:34:45.785Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T22:34:45.788Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-17T22:34:45.788Z] CLI Version:   9.16.6
+[debug] [2022-01-17T22:34:45.788Z] Platform:      win32
+[debug] [2022-01-17T22:34:45.788Z] Node Version:  v14.18.1
+[debug] [2022-01-17T22:34:45.789Z] Time:          Mon Jan 17 2022 23:34:45 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-01-17T22:34:45.789Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T22:34:45.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T22:34:45.843Z] > authorizing via signed-in user (contact@gdgstrasbourg.fr)
+[debug] [2022-01-17T22:34:45.843Z] [iam] checking project gdg-strasbourg-vitrine for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T22:34:45.846Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gdg-strasbourg-vitrine:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T22:34:46.037Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:34:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=113","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:34:46.039Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T22:34:46.039Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:34:46.136Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 17 Jan 2022 22:34:45 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:34:46.152Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine [none]
+[debug] [2022-01-17T22:34:46.380Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine 200
+[debug] [2022-01-17T22:34:46.380Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine {"projectId":"gdg-strasbourg-vitrine","projectNumber":"276212992139","displayName":"GDG Strasbourg vitrine","name":"projects/gdg-strasbourg-vitrine","resources":{"hostingSite":"gdg-strasbourg-vitrine","realtimeDatabaseInstance":"gdg-strasbourg-vitrine","storageBucket":"gdg-strasbourg-vitrine.appspot.com","locationId":"europe-west3"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gdg-strasbourg-vitrine'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T22:34:46.385Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T22:34:46.385Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:34:46.471Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 17 Jan 2022 22:34:45 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:34:46.535Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gdg-strasbourg-vitrine/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/meetup","location":"https://gdg.community.dev/gdg-strasbourg/","statusCode":301},{"glob":"/ggj","location":"/ggj/index.html","statusCode":301},{"glob":"/youtube","location":"http://youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q","statusCode":301},{"glob":"/fb","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/facebook","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/twitter","location":"https://twitter.com/gdgStrasbourg","statusCode":301},{"glob":"/lknd","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/linkedin","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/instagram","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/insta","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/twitch","location":"https://twitch.tv/gdgstrasbourg/","statusCode":301},{"glob":"/tiktok","location":"https://www.tiktok.com/@GDGStrasbourg","statusCode":301},{"glob":"/BLUE","location":"/blue","statusCode":301},{"glob":"/devfest","location":"https://devfest.gdgstrasbourg.fr","statusCode":301},{"glob":"/io","location":"https://io.gdgstrasbourg.fr","statusCode":301},{"glob":"/unexpected","location":"https://unexpected.gdgstrasbourg.fr","statusCode":301},{"glob":"/cfp","location":"https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ","statusCode":301}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T22:34:47.667Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:34:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gdg-strasbourg-vitrine]: beginning deploy... 
+[debug] [2022-01-17T22:34:47.769Z] Error: EPERM: operation not permitted, scandir 'C:/UwAmp/www/gdg/public/firebase-debug.log'
+    at Object.readdirSync (fs.js:1047:3)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:286:41)
+    at GlobSync._readdirInGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:243:17)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:274:17)
+    at GlobSync._processReaddir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:135:22)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:378:10)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:128:10)
+    at new GlobSync (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:46:10)
+    at Function.globSync [as sync] (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:24:10)
+    at Object.listFiles (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:19)
+    at runDeploys (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:42:35)
+    at deploy (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:73:12)
+    at _chain (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-01-17T22:35:11.994Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T22:35:11.996Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2022-01-17T22:35:11.996Z] CLI Version:   9.16.6
+[debug] [2022-01-17T22:35:11.996Z] Platform:      win32
+[debug] [2022-01-17T22:35:11.996Z] Node Version:  v14.18.1
+[debug] [2022-01-17T22:35:11.997Z] Time:          Mon Jan 17 2022 23:35:11 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-01-17T22:35:11.997Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T22:35:12.052Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T22:35:12.053Z] > authorizing via signed-in user (contact@gdgstrasbourg.fr)
+[debug] [2022-01-17T22:35:12.054Z] [iam] checking project gdg-strasbourg-vitrine for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T22:35:12.057Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gdg-strasbourg-vitrine:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T22:35:12.685Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:35:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=556","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:35:12.688Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T22:35:12.688Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:35:12.766Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 17 Jan 2022 22:35:11 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:35:12.783Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine [none]
+[debug] [2022-01-17T22:35:13.013Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine 200
+[debug] [2022-01-17T22:35:13.014Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gdg-strasbourg-vitrine {"projectId":"gdg-strasbourg-vitrine","projectNumber":"276212992139","displayName":"GDG Strasbourg vitrine","name":"projects/gdg-strasbourg-vitrine","resources":{"hostingSite":"gdg-strasbourg-vitrine","realtimeDatabaseInstance":"gdg-strasbourg-vitrine","storageBucket":"gdg-strasbourg-vitrine.appspot.com","locationId":"europe-west3"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gdg-strasbourg-vitrine'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T22:35:13.019Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T22:35:13.020Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T22:35:13.101Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Mon, 17 Jan 2022 22:35:12 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T22:35:13.116Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gdg-strasbourg-vitrine/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/meetup","location":"https://gdg.community.dev/gdg-strasbourg/","statusCode":301},{"glob":"/ggj","location":"/ggj/index.html","statusCode":301},{"glob":"/youtube","location":"http://youtube.com/channel/UCzcm36FRd4HrU_WQsjsl_3Q","statusCode":301},{"glob":"/fb","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/facebook","location":"https://www.facebook.com/GDGStrasbourg67","statusCode":301},{"glob":"/twitter","location":"https://twitter.com/gdgStrasbourg","statusCode":301},{"glob":"/lknd","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/linkedin","location":"https://www.linkedin.com/company/gdg-strasbourg/","statusCode":301},{"glob":"/instagram","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/insta","location":"https://www.instagram.com/gdgstrasbourg/","statusCode":301},{"glob":"/twitch","location":"https://twitch.tv/gdgstrasbourg/","statusCode":301},{"glob":"/tiktok","location":"https://www.tiktok.com/@GDGStrasbourg","statusCode":301},{"glob":"/BLUE","location":"/blue","statusCode":301},{"glob":"/devfest","location":"https://devfest.gdgstrasbourg.fr","statusCode":301},{"glob":"/io","location":"https://io.gdgstrasbourg.fr","statusCode":301},{"glob":"/unexpected","location":"https://unexpected.gdgstrasbourg.fr","statusCode":301},{"glob":"/cfp","location":"https://conference-hall.io/public/event/Tvw9Tpxv3oYb2JGMs6JJ","statusCode":301}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T22:35:14.343Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 22:35:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gdg-strasbourg-vitrine]: beginning deploy... 
+[debug] [2022-01-17T22:35:14.446Z] Error: EPERM: operation not permitted, scandir 'C:/UwAmp/www/gdg/public/firebase-debug.log'
+    at Object.readdirSync (fs.js:1047:3)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:286:41)
+    at GlobSync._readdirInGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:243:17)
+    at GlobSync._readdir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:274:17)
+    at GlobSync._processReaddir (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:135:22)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:378:10)
+    at GlobSync._process (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:128:10)
+    at new GlobSync (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:46:10)
+    at Function.globSync [as sync] (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:24:10)
+    at Object.listFiles (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\listFiles.js:6:19)
+    at runDeploys (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:42:35)
+    at deploy (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\deploy.js:73:12)
+    at _chain (C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\colcc\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.

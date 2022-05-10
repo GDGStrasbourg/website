@@ -116,7 +116,7 @@ nav.dark-theme {
 }
 .blue-event {
 	height: 30vh;
-	background: url(src/ggj-header.jpg) no-repeat center scroll;
+	background: url(hash-header.gif) no-repeat center scroll;
 	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
 	background-size: cover; /* version standardisée */
 }
