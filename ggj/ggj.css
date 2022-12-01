@@ -38,6 +38,10 @@ h1 {
     border-radius: 20px;
 }
 
+.card-primo {
+    width: 60%;
+}
+
 .prime-prog {
     background-image: linear-gradient(to left bottom, #613ba0, #7b3a9f, #933a9c, #a73a99, #ba3b94);
 }
