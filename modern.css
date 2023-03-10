@@ -165,26 +165,8 @@ body.dark-theme .dark-lazy {
 body.dark-theme .page-footer {
 	background-color: #212121;
 }
-
-/* width */
-.scrollCustom::-webkit-scrollbar {
-  width: 10px;
-  height: 4px;
-}
-
-/* Track */
-.scrollCustom::-webkit-scrollbar-track:horizontal {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-.scrollCustom::-webkit-scrollbar-thumb:horizontal {
-  background: #888; 
-}
-
-/* Handle on hover */
-.scrollCustom::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #555; 
+body.dark-theme .team-section {
+	color: rgb(241, 241, 241);
 }
 
 .switch label input[type=checkbox]:checked+.lever {
@@ -196,10 +178,7 @@ body.dark-theme .page-footer {
 }
 
 .team-section {
-	padding: 30px;
-	background: rgb(103,113,255);
-	background: linear-gradient(110deg, rgba(103,113,255,0.8239670868347339) 0%, rgba(179,0,255,0.896796218487395) 100%);
-	text-align: center;
+	color: black;
 }
 
 .member-name {
@@ -210,4 +189,23 @@ body.dark-theme .page-footer {
 	text-align: center;
 	font-weight: bold;
 	font-size: large;
+}
+
+.capitale-dev {
+	min-height: 20vh;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(0%2c 8%2c 193%2c 1)'%3e%3c/rect%3e%3cpath d='M946.070147705983 403.1130262529494L856.9319201371761 392.1682281212503 885.0838367240309 531.3479685403101z' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1237.9660256797831 85.33736439204125L1087.0411363443607 50.4936081953465 1203.1222694830883 236.26225372746373z' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M13.463364192138322 365.3474039895184L-16.807427229077543 470.9141992183621 88.75936799976617 501.18499063957796 119.03015942098202 395.61819541073424z' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M477.839%2c655.801C517.868%2c657.198%2c556.9%2c639.557%2c578.054%2c605.546C600.42%2c569.587%2c605.538%2c522.81%2c582.765%2c487.108C561.28%2c453.426%2c517.692%2c445.637%2c477.839%2c448.438C443.223%2c450.871%2c413.316%2c470.367%2c395.685%2c500.255C377.73%2c530.693%2c372.549%2c567.7%2c389.053%2c598.948C406.644%2c632.254%2c440.196%2c654.487%2c477.839%2c655.801' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1030.7833859979448 167.31210794894739L970.8337285710547 263.25161473338176 1066.773235355489 323.20127216027186 1126.7228927823792 227.26176537583746z' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1312.519%2c211.265C1342.665%2c211.07%2c1374.122%2c202.065%2c1389.147%2c175.929C1404.135%2c149.858%2c1396.763%2c117.76%2c1380.996%2c92.153C1366.077%2c67.924%2c1340.973%2c51.429%2c1312.519%2c51.48C1284.15%2c51.531%2c1259.499%2c68.339%2c1244.469%2c92.399C1228.35%2c118.203%2c1219.035%2c150.53%2c1234.151%2c176.934C1249.338%2c203.461%2c1281.953%2c211.463%2c1312.519%2c211.265' fill='rgba(0%2c 9%2c 216%2c 1)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");    
+	background-size: cover;
+	color: white;
+}
+
+.capitale-blue {
+	background-color: #0009d8;
+}
+
+.capitale-blue:hover {
+	background-color: #0008c1;
+}
+
+.capitale-blue:focus {
+	background-color: #0008c1;
 }
