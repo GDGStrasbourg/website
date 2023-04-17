@@ -43,7 +43,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col l8 s12">
-					<img src="src/capitale-dev-text.png" style="height: 15vh; margin-top: 2.8vh;" alt="Capitale Dev fait désormais parti de Capitale.dev">
+					<img src="src/capitale-dev-text.png" style="height: 15vh; margin-top: 2.8vh; max-width: 100%;" alt="Capitale Dev fait désormais parti de Capitale.dev">
 				</div>
 				<div class="col l4 s12">
 					<a href="https://capitale.dev" style="margin-top: 6.8vh; margin-bottom: 6.8vh;" class="btn-large waves-effect capitale-blue">Découvrir Capitale.dev<i class="material-icons right">arrow_right_alt</i></a>
@@ -113,7 +113,7 @@
 			<div class="col s12 m6 d-flex">
 				<div class="card card-white" style="border-radius: 10px;">
 					<div class="card-setheight">
-						<div class="card-image" style="border-radius: 10px 10px 0px 0px; background-image:url(src/live.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; height: 150px;">
+						<div class="card-image" style="border-radius: 10px 10px 0px 0px; background-image:url(src/live.png); background-position: center; background-repeat: no-repeat; background-size: cover; height: 150px;">
 							<span class="card-title valign-wrapper black-text">I/O Extended</span>
 						</div>
 						<div class="card-content">
@@ -326,7 +326,7 @@
 					$('#no_meetup').show();
 					return;
 				}
-				if (data.title == "Devfest Strasbourg 2022") {
+				if (data.title == "Devfest Strasbourg 2023") {
 					$('#no_meetup').show();
 					return;
 				}
@@ -350,7 +350,7 @@
 
 			$.ajax({
 				type:"GET", // GET = requesting data
-				url:"https://gdg.community.dev/api/chapter/333/event/",
+				url:"https://gdg.community.dev/api/chapter/333/event/?order_by=-id",
 				success: function(data) {
 					successCallBack(data);
 				},
